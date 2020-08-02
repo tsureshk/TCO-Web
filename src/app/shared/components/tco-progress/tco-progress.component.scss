@@ -1,0 +1,28 @@
+.tco_progress {
+    border-bottom: 1px solid #313131;
+
+    .tco_progress_list{
+
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+
+            li {
+                flex: 1;
+                padding: 15px;
+                padding-top: 17px;
+                color: #fff;
+                background-color:  #333;
+                display: flex;
+                justify-content: space-between;
+            }
+
+        }
+
+    }
+}
+
+.currentPhase {
+    background-color : #007bff !important;
+}

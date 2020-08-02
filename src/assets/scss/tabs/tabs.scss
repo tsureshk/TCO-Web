@@ -1,0 +1,27 @@
+.nav-link {
+            border: 0px !important;
+            color: #fff;
+            font-family: MetricHPE-Light;
+
+
+            &.active {
+                background : transparent !important;
+                color: #fff !important;
+                font-weight: 600 !important;
+                border-bottom: 3px solid #007BFF !important;
+            }
+
+        &:hover {
+            color: #fff !important;
+        }
+}
+
+
+.nav-tabs {
+    border-bottom: 0px !important;
+}
+
+test {
+    color: #fff !important;
+    background-color: red;
+}

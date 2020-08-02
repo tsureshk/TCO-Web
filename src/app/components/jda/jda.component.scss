@@ -1,0 +1,61 @@
+.jda_wrapper {
+
+    .jda_list {
+
+        ul {
+
+
+            li {
+                margin-top: 10px;
+
+                .tco_card {
+
+
+                    .card_content{
+                        display: flex !important;
+                        justify-content:space-between !important;
+                        align-items: center;
+
+                        .card_content_checkbox {
+                            display: flex;
+                            flex: 1;
+
+                            input {
+
+                                &:nth-child(1){
+                                
+                                    margin-right: 10px;
+                                }
+
+                                &:nth-child(2){
+                                    margin-left: 20px;
+                                    margin-right: 10px;
+                                }
+                            }
+
+                        }
+                        .card_content_input {
+                            display: flex;
+                            flex: 1;
+                            width: 100%;
+
+                            .form-group {
+                                margin-bottom: 0px;
+                                width: 100%;
+
+                                .form-control {
+                                    width: 100% !important; 
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.jda_total_cost {
+    margin-top: 20px;
+}

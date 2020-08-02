@@ -1,0 +1,559 @@
+<div class="tco_footer">
+  <!-- <app-tco-footer ></app-tco-footer> -->
+  <button class="but but-primary previous" (click)="goToClient()"></button>
+</div>
+
+<div class="output_wrapper">
+
+  <div class="output_sections">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+          aria-selected="true">{{tco.jdaInput.SumJDA}} Section A : What You Told Us</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+          aria-selected="false">Section - B: Migration Factory Model's Cloud assure Model - What is it</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          aria-selected="false">Section-B : {{tco.beginPage.clientName}}'s TCO Summary</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+        <div class="seactiona_wrapper">
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>General Information</span>
+            </div>
+
+            <div class="card_content">
+
+              <span>
+                {{tco.beginPage.clientName}} is currently operating Blue Yonder's WMS Application Suite.
+                {{tco.beginPage.clientName}} operates in
+                8 country/countries and has a WMS User population of 100 headquartered in Oregon.
+              </span>
+
+            </div>
+
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>HeadCount Information</span>
+            </div>
+
+            <div class="card_content">
+
+              <span>
+                {{tco.beginPage.clientName}} has a team of {{ calculateFTECount() }} members supporting the current
+                application. This team
+                consists of {{ tco.clientInput.NumberofBusinessFTEs }} Functional
+                FTEs, {{ tco.clientInput.NumberofITorTechnologyDeveloperFTEs }} Developer FTEs,
+                {{ tco.clientInput.NumberofSystemAdminDBAFTEs }} System Admin/DBA FTEs and
+                {{ tco.clientInput.NumberofConsultantsContractors }} Consultants/Contractors. The estimated annual
+                payroll cost for this team is estimated at $ {{ calculateWMSSoftwareFTE() | number }} !
+              </span>
+
+            </div>
+
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Application Footprint</span>
+            </div>
+
+            <div class="card_content">
+
+              <span>
+                {{tco.beginPage.clientName}} has the following WMS modules running on version 
+                {{ tco.clientInput.CurrentOnpremiseApplicationVersion }} implemented:
+              </span>
+
+            </div>
+
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Current Spend</span>
+            </div>
+
+            <div class="card_content">
+              <form>
+
+                <!-- <div class="form-group">
+                  <label>Software Licence Cost / Year(Blue Yonder)</label>
+                  <input class="form-control">
+                </div> -->
+
+                <div class="form-group">
+                  <label>Software Support/Per Year</label>
+                  <!-- <input class="form-control" name="SoftwareSupport"
+                    [(ngModel)]="tco.erpTCOReport.CurrentSpendSoftwareSupportPerYear"> -->
+
+                  <input class="form-control" name="SoftwareSupport"
+                    value=${{calculateSoftwareWMSSupportCostPerYear()|number}}>
+                </div>
+                <!-- <div class="form-group">
+                  <label>Legacy Software Support / Per Year (Blue Yonder)</label>
+                  <input class="form-control">
+                </div> -->
+
+                <!-- <div class="form-group">
+                  <label>Implementation Cost / Year</label>
+                  <input class="form-control">
+                </div> -->
+
+                <div class="form-group">
+                  <label>Software Upgrade Cost</label>
+                  <input class="form-control" name="softwareUpgradeCost18Months"
+                    value=${{calculateApplicationUpgradeCost()|number}}>
+                </div>
+
+                <div class="form-group">
+                  <label>Hardware Cost/Year</label>
+                  <input class="form-control" name="HardwareCostPerYear" value=${{calculateHardwareWMSCost()|number}}>
+                </div>
+
+                <div class="form-group">
+                  <label>Support FTE Headcount Cost/Year</label>
+                  <input class="form-control" name="SupportFTEHeadcountCostPerYear"
+                    value=${{calculateWMSSoftwareFTE()|number}}>
+                </div>
+
+                <!-- <div class="form-group">
+                  <label>Legacy Support/Per Year (DS) </label>
+                  <input class="form-control">
+                </div> -->
+
+              </form>
+
+              <div class="form-group">
+                <label>Total</label>
+                <input class="form-control" name="TotalCostPerYear" value=${{calculateFirstYearTotal()|number}}>
+              </div>
+
+              <!-- <div class="form-group">
+                <label>Estimated Reduction</label>
+                <label>(First 3 Years Average</label>
+                <input class="form-control" name="first3YearCost" value="20% to 30%">
+                <label>(Year 4-5)</label>
+                <input class="form-control" name="FourTo5YearCost" value="34%/Year to 44%/Year">
+              </div> -->
+
+            </div>
+
+
+          </div>
+
+          <div class="financials_wrapper">
+
+            <div class="financials_wrapper">
+
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Application Upgrade History</span>
+            </div>
+
+            <div class="card_content">
+              <span>{{tco.beginPage.clientName}} has performed 2 upgrades since Feb-2018 with an average spend of
+                ${{ calculateApplicationUpgradeCost() |number }}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+
+        <div class="seactionb-wrapper">
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Factory migration model</span>
+            </div>
+
+            <div class="card_content">
+              <p>Factory migration Assure is a unique offering which enables clients to migrate their on-premise Blue
+                Yonder application to the Blue Yonder Cloud. This model facilitates this move to the cloud by removing
+                obstacles such as up-front implementation cost, anxiety of maintaining the Cloud Application,
+                maintaining the existing on-premise implementation while moving to the cloud while making sure that all
+                business processes are mapped and ready to be used on the new Blue Yonder Cloud Platform.</p>
+            </div>
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Factory migration</span>
+            </div>
+
+            <div class="card_content">
+
+              <ul>
+
+                <li>
+                  Gurranteed TCO Reduction
+                </li>
+
+                <li>
+                  Fixed monthly fee model
+                </li>
+
+                <li>
+                  Immediate reduction in current spend
+                </li>
+
+                <li>
+                  End to End services for Cloud Implementation
+                </li>
+
+                <li>
+                  Ongoing Maintenance for existing Blue Yonder on-premise application(s) as well as Blue Yonder Cloud
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Factory migration</span>
+            </div>
+
+            <div class="card_content">
+
+              <span>
+
+                1. Assumes Maintenance and Support of current PeopleSoft or WMS system<br>
+                2. Strategizes and Recommends a Single or Multi-Phase Migration from On-Premise to the Blue Yonder
+                Cloud<br>
+                3. Includes Custom Migration of Current Business Critical Customizations Not Supported by Delivered
+                Functionality by Leveraging Blue Yonder’s Platform as a Service (PaaS)<br>
+                4. Includes Post implementation Application Maintenance Services for the Newly Deployed Blue Yonder
+                Cloud Solution
+                5. Includes Support for Existing On-Premise Blue Yonder Application(s)<br>
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Current Spend</span>
+            </div>
+
+            <div class="card_content">
+              <form>
+
+                <div class="form-group">
+                  <label>Implementation Services</label>
+                  <input class="form-control" value="">
+                </div>
+
+                <div class="form-group">
+                  <label>Maintenance Services</label>
+                  <input class="form-control" value="" placeholder="Enter Something">
+                </div>
+                <div class="form-group">
+                  <label>Upgrade Support</label>
+                  <input class="form-control" value="" placeholder="Enter Something">
+                </div>
+
+
+              </form>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        <div class="section3_wrapper">
+
+
+          <div class="tco_card">
+
+            <div class="card_header">
+              <span>Current Spread</span>
+            </div>
+
+            <div class="card_content">
+
+              <form>
+
+                <!-- <div class="form-group">
+                  <label>Software License Cost/Year (Blue Yonder)</label>
+                  <input class="form-control" name="softwareLicenseCostPerYear1"
+                    [(ngModel)]="tco.erpTCOReport.CurrentSpendSoftwareSupportPerYear">
+                </div> -->
+
+                <div class="form-group">
+                  <label>Software Support/Per Year</label>
+                  <input class="form-control" name="SoftwareSupport1"
+                    value=${{calculateSoftwareWMSSupportCostPerYear()|number}}>
+                </div>
+                <!-- <div class="form-group">
+                  <label>Legacy Software Support/Per Year (Blue Yonder)</label>
+                  <input class="form-control">
+                </div> -->
+
+                <!-- <div class="form-group">
+                  <label>Implementation Cost/Year (DS)</label>
+                  <input class="form-control">
+                </div> -->
+
+                <div class="form-group">
+                  <label>Software Upgrade Cost</label>
+                  <input class="form-control" name="softwareUpgradeCost18Months1"
+                    value=${{calculateApplicationUpgradeCost()|number}}>
+                </div>
+
+                <div class="form-group">
+                  <label>Hardware Cost/Year</label>
+                  <input class="form-control" name="HardwareCostPerYear1" value=${{calculateHardwareWMSCost()|number}}>
+                </div>
+
+                <div class="form-group">
+                  <label>Support FTE Headcount Cost/Year</label>
+                  <input class="form-control" name="SupportFTEHeadcountCostPerYear"
+                    value=${{calculateWMSSoftwareFTE()|number}}>
+                </div>
+
+                <!-- <div class="form-group">
+                  <label>Legacy Support/Per Year (DS)</label>
+                  <input class="form-control" value="" placeholder="Enter Something">
+                </div> -->
+
+                <div class="form-group">
+                  <label>Total</label>
+                  <input class="form-control" name="TotalCostPerYear" value=${{calculateFirstYearTotal()|number}}>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+                   <!-- starts here  1 year communlative -->
+          <div class="tco_card">
+            <div class="card_header">
+              TCO Summary
+            </div>
+            <div class="form-group" style="padding-left: 20px;">
+              <div class="row">
+                <div class="col-lg-5">
+                  <table border="2px" style="font-size: large;">
+                    <tr>
+                     
+                      <td>
+                        Description
+                      </td>
+                      <td>
+                        WMS Yr - 1
+                      </td>
+                      <td>
+                        Cloud Yr - 1
+                      </td>
+                    </tr>
+                    <tr *ngFor="let firstYear of firstYearCalculationValue">
+                     
+                      <td>
+                         {{firstYear.description}}
+                      </td>
+                      <td>
+                       $ {{firstYear.wmsyear1|number}}
+                      </td>
+                      <td>
+                        $ {{firstYear.cloudyear1|number}}
+                      </td>
+                    </tr>
+                   
+                  </table>
+                </div>
+                <div class="col-lg-7">
+                  <div class=row>
+                    <div class="col-lg-12" style="font-weight:100; font-size: xx-large;">
+                      <table border="2px">
+                        <tr >
+                          <td>
+                            Saving for 3 years : {{calculate3YearSavingPercentage()| number:'1.0-0'}}%
+                          </td>
+                        </tr>
+
+                        <tr >
+                          <td>
+                            Saving for 5 years : {{calculate5YearSavingPercentage()| number:'1.0-0'}}%
+                          </td>
+                        </tr>
+                        </table>
+                    
+                    </div>
+                </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- ends here -->
+     
+             <!-- starts here  5 year communlative -->
+             <div class="tco_card">
+              <div class="card_header">
+                Five year cummulative
+              </div>
+              <div class="form-group" style="padding-left: 20px;">
+                <table border="2px" style="font-size: large;">
+                  <tr>
+                   
+                    <td>
+                      Description
+                    </td>
+                    <td>
+                      WMS Yr-1
+                    </td>
+                    <td>
+                      Cloud Yr-1
+                    </td>
+                    <td>
+                      WMS Yr-2
+                    </td>
+                    <td>
+                      Cloud Yr - 2
+                    </td>
+                    <td>
+                      WMS Yr - 3
+                    </td>
+                    <td>
+                      Cloud Yr - 3
+                    </td>
+                    <td>
+                      WMS Yr - 4
+                    </td>
+                    <td>
+                      Cloud Yr - 4
+                    </td>
+                    <td>
+                      WMS Yr - 5
+                    </td>
+                    <td>
+                      Cloud Yr - 5
+                    </td>
+                  </tr>
+                  <tr *ngFor="let finalYear of finalDataValue">
+                   
+                    <td>
+                       {{finalYear.description}}
+                    </td>
+                    <td>
+                     $ {{finalYear.wmsyear1|number}}
+                    </td>
+                    <td>
+                      $ {{finalYear.cloudyear1|number}}
+                    </td>
+                    <td>
+                      $ {{finalYear.wmsyear2|number}}
+                     </td>
+                     <td>
+                       $ {{finalYear.cloudyear2|number}}
+                     </td>
+                     <td>
+                      $ {{finalYear.wmsyear3|number}}
+                     </td>
+                     <td>
+                       $ {{finalYear.cloudyear3|number}}
+                     </td>
+                     <td>
+                      $ {{finalYear.wmsyear4|number}}
+                     </td>
+                     <td>
+                       $ {{finalYear.cloudyear4|number}}
+                     </td>
+                     <td>
+                      $ {{finalYear.wmsyear5|number}}
+                     </td>
+                     <td>
+                       $ {{finalYear.cloudyear5|number}}
+                     </td>
+                  </tr>
+                 
+                </table>
+              </div>
+            </div>
+
+
+            <!-- ends here -->
+
+            <div class="tco_card">
+
+              <div class="card_header">
+                5 Year Cumulative Savings
+              </div>
+              <div class="card_content" width="75%" style="padding:130px !important">
+
+                <canvas baseChart [colors]="chartColors" [chartType]="'bar'" [datasets]="chartData"
+                  [labels]="chartLabels" [options]="chartOptions" [legend]="true" (chartClick)="onChartClick($event)">
+                </canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  <div class="tco_footer">
+    <button class="but but-primary previous" (click)="goToClient()"></button>
+  </div>

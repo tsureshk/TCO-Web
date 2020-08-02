@@ -1,0 +1,6 @@
+[
+        {"description": "Functional Business FTE", "year1": "75", "year2": "75", "year3": "75", "year4": "75", "year5": "75"},
+        {"description": "Technology/Developer FTE", "year1": "50", "year2": "50", "year3": "50", "year4": "75", "year5": "75"},
+        {"description": "System Admin/DBA", "year1": "50", "year2": "50", "year3": "50", "year4": "75", "year5": "75"},
+        {"description": "Consultant/Contractor", "year1": "50", "year2": "50", "year3": "50", "year4": "75", "year5": "75"}
+]

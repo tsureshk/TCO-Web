@@ -1,0 +1,374 @@
+<div class="tco_footer">
+  <!-- <app-tco-footer ></app-tco-footer> -->
+  <button class="but but-primary previous" (click)="goToInformation()">
+
+  </button>
+  <button class="but but-primary" (click)="goToOutput()"></button>
+</div>
+
+
+<div class="client-input">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+        aria-selected="true">Section A</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+        aria-selected="false">Section B</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="section_a">
+        <div class="tco_card">
+          <div class="card_header">
+            <span>{{tco.beginPage.clientName}} Background WMS Details </span>
+          </div>
+
+          <div class="card_content">
+            <div class="form-group">
+              <label>Current On-premise Application</label>
+              <input class="form-control" name="CurrentOnpremiseApplication"
+                [(ngModel)]="tco.clientInput.CurrentOnpremiseApplication" />
+            </div>
+
+            <div class="form-group">
+              <label>Current On-premise Application version</label>
+              <input class="form-control" name=" CurrentOnpremiseApplicationVersion"
+                [(ngModel)]="tco.clientInput.CurrentOnpremiseApplicationVersion" />
+            </div>
+
+            <div class="form-group">
+              <label>Level of Customization(Estimated) </label>
+              <select class="form-control" name="GlobalProcurementComplexity"
+                [(ngModel)]="tco.clientInput.LevelofCustomizationEstimated">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+              </select>
+              <!-- <input
+                class="form-control"
+                name="LevelofCustomizationEstimated"
+                [(ngModel)]="tco.clientInput.LevelofCustomizationEstimated"
+              /> -->
+            </div>
+
+            <div class="form-group">
+              <label>{{tco.beginPage.clientName}}'s Primary Location (Country)</label>
+              <select class="form-control" name="CountryLocation">
+                <option *ngFor="let country of locationData">{{country.country}}</option>
+              </select>
+              
+              <label>{{tco.beginPage.clientName}}'s Primary Location (HQ State)</label>
+              <select class="form-control" name="PrimaryLocation" (ngModelChange)="onChange($event)"
+                [(ngModel)]="tco.clientInput.PrimaryLocation">
+                <option *ngFor="let state of locationData[0].state">{{state.name}}</option>
+              </select>
+
+            </div>
+
+            <div class="form-group" *ngIf="false">
+              <label>Total Number of Employees (FTEs)</label>
+              <input class="form-control" name="TotalNumberofEmployeesFTEs "
+                [(ngModel)]="tco.clientInput.TotalNumberofEmployeesFTEs" />
+            </div>
+
+            <div class="form-group">
+              <label>Total Number of WMS Users (FTEs)</label>
+              <input class="form-control" name="TotalNumberofFinancialUsers "
+                [(ngModel)]="tco.clientInput.TotalNumberofFinancialUsers" />
+            </div>
+
+
+            <div class="form-group">
+              <label>Number of Countries in Scope</label>
+              <input class="form-control" name="NumberofCountriesinScope "
+                [(ngModel)]="tco.clientInput.NumberofCountriesinScope" />
+            </div>
+
+            <!-- <div class="form-group">
+              <label>Total Number of Order Line Items per Year </label>
+              <input class="form-control" name="TotalNumberofInvoiceLineItemsperYear " [(ngModel)]="
+                  tco.clientInput.TotalNumberofInvoiceLineItemsperYear
+                " />
+            </div> -->
+
+            <div class="form-group">
+              <label>Total Annual Application Support Fees Payable to JDA (for all
+                modules owned)</label>
+              <input class="form-control" name="TotalAnnualApplicationSupportFeesPayabletoJDA " [(ngModel)]="
+                  tco.clientInput.TotalAnnualApplicationSupportFeesPayabletoJDA
+                " />
+            </div>
+
+            <div class="form-group">
+              <label>T-Shirt Sizing - Output</label>
+              <select class="form-control" name="TShirtSizing" [(ngModel)]="tco.tShirtSizingWMS.ShirtSize">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>Extra Large</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>No. of sites implemented - Year 1.</label>
+              <input class="form-control" name="SizingValue " [(ngModel)]="tco.clientInput.NoOfSiteImpYear1" />
+            </div>
+
+            <div class="form-group">
+              <label>No. of sites implemented - Year 2.</label>
+              <input class="form-control" name="SizingValue " [(ngModel)]="tco.clientInput.NoOfSiteImpYear2" />
+            </div>
+
+            <div class="form-group">
+              <label>No. of sites implemented - Year 3.</label>
+              <input class="form-control" name="SizingValue " [(ngModel)]="tco.clientInput.NoOfSiteImpYear3" />
+            </div>
+
+            <!-- Starts here -->
+
+            <div class="form-group">
+              <label>BY target License cost per User / Year.</label>
+              <input class="form-control" name="SizingValue " placeholder="License cost per user"
+                [(ngModel)]="tco.jdaInput.SumJDA" />
+            </div>
+            <!-- Ends here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="section_b">
+        <div class="tco_card">
+          <div class="card_header">
+            <span>{{ tco.beginPage.clientName }}'s WMS Financial Upgrade
+              Costs</span>
+          </div>
+
+          <div class="card_content">
+            INSTRUCTIONS: Please specify the nature of the upgrades performed:
+            a) Technical = Upgrade only the application to bring it up to the
+            latest Toolset ONLY b) Functional = Upgrade the Toolset as well as
+            implement new Functionality c) Transformational = Upgrade Toolset,
+            Implement new functionality, as well as retire customizations and
+            re-engineer business process (based on new functionality available)
+          </div>
+        </div>
+
+        <div class="tco_card">
+          <div class="card_header">
+            <span> APPLICATION UPGRADE- 1</span>
+          </div>
+
+          <div class="card_content">
+            <form>
+              <div class="form-group">
+                <label>Upgrade Type</label>
+                <select class="form-control" name="UpgradeType1" [(ngModel)]="tco.clientInput.UpgradeType1">
+                  <option>Technical</option>
+                  <option>Functional</option>
+                  <option>Transformational</option>
+                </select>
+              
+              </div>
+
+              <div class="form-group">
+                <label>Duration(Weeks)</label>
+                <input class="form-control" name="Duration1" [(ngModel)]="tco.clientInput.Duration1" />
+              </div>
+
+              <div class="form-group">
+                <label>Upgrade Performed internally or was a partner used
+                </label>
+
+                <select class="form-control" name="UpgradePerformedInternallyOrUsed" [(ngModel)]="tco.clientInput.UpgradePerformedInternallyOrUsed1">
+                  <option>Partner</option>
+                  <option>Internally</option>
+                </select>
+<!--                 
+                <input class="form-control" name="UpgradePerformedInternallyOrUsed"
+                  [(ngModel)]="tco.clientInput.UpgradePerformedInternallyOrUsed1" /> -->
+              </div>
+
+              <div class="form-group">
+                 <mat-form-field class="example-full-width" appearance="fill" style="width:100%">
+                  <mat-label style="color: white;font-size: larger;">Choose a date</mat-label>
+                  <input matInput [matDatepicker]="Upgrade1picker" 
+                  value="08/01/2020"
+                  (dateChange)="onChangeUpgrade1($event)">
+                  <mat-datepicker-toggle matSuffix [for]="Upgrade1picker"></mat-datepicker-toggle>
+                  <mat-datepicker [dateClass]="dateClass" #Upgrade1picker></mat-datepicker>
+                </mat-form-field>
+                
+              </div>
+
+              <div class="form-group">
+                <label>Cost</label>
+                <input class="form-control" name="Upgrade1Cost" [(ngModel)]="tco.clientInput.UpgradeCost1" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Starts here  -->
+        <div class="tco_card">
+          <div class="card_header">
+            <span> APPLICATION UPGRADE- 2</span>
+          </div>
+
+          <div class="card_content">
+            <form>
+              <div class="form-group">
+                <label>Upgrade Type</label>
+                <select class="form-control" name="UpgradeType1" [(ngModel)]="tco.clientInput.UpgradeType2">
+                  <option>Technical</option>
+                  <option>Functional</option>
+                  <option>Transformational</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Duration(Weeks)</label>
+                <input class="form-control" name="Duration" [(ngModel)]="tco.clientInput.Duration2" />
+              </div>
+
+              <div class="form-group">
+                <label>Upgrade Performed internally or was a partner used
+                </label>
+                <select class="form-control" name="UpgradePerformed2InternallyOrUsed" [(ngModel)]="tco.clientInput.UpgradePerformedInternallyOrUsed2">
+                  <option>Partner</option>
+                  <option>Internally</option>
+                </select>
+                <!-- <input class="form-control" name="UpgradePerformedInternallyOrUsed"
+                  [(ngModel)]="tco.clientInput.UpgradePerformedInternallyOrUsed2" /> -->
+              </div>
+
+              <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="fill" style="width:100%">
+                 <mat-label style="color: white;font-size: larger;">Choose a date</mat-label>
+                 <input matInput [matDatepicker]="Upgrade2picker"
+                 value="08/01/2020"
+                  (dateChange)="onChangeUpgrade2($event)">
+                 <mat-datepicker-toggle matSuffix [for]="Upgrade2picker"></mat-datepicker-toggle>
+                 <mat-datepicker [dateClass]="dateClass" #Upgrade2picker></mat-datepicker>
+               </mat-form-field>
+               
+             </div>
+
+              <div class="form-group">
+                <label>Cost</label>
+                <input class="form-control" name="Upgrade2Cost" [(ngModel)]="tco.clientInput.UpgradeCost2" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Ends here -->
+
+
+        <div class="tco_card">
+          <div class="card_header">
+            <span>HOSTED INFRASTRUCTURE</span>
+          </div>
+
+          <div class="card_content">
+            <form>
+              <div class="form-group">
+                <label>Is your current hardware hosted by a Third Party
+                  Vendor?</label>
+                <input class="form-control" value="" />
+              </div>
+
+              <div class="form-group">
+                <label>If hosted, please specify your annual spend</label>
+                <input class="form-control" name="annualhostingfee" [(ngModel)]="tco.clientInput.annualhostingfee" />
+              </div>
+
+              <!-- <div class="form-group">
+                <label>Upgrade Performed internally or was a partner used
+                </label>
+                <input class="form-control" value="" />
+              </div> -->
+
+              <div class="form-group">
+                <label>Is the hosting provider offering application support?</label>
+                <input class="form-control" value="" />
+              </div>
+
+              <div class="form-group">
+                <label>If application support is provided in addition to hosting by
+                  the hosting vendor, is the application support cost included
+                  in the annual hosting fee? IF NOT, please provide annual
+                  application support cost here</label>
+                <input class="form-control" name="applicationHostingFee"
+                  [(ngModel)]="tco.clientInput.applicationHostingFee" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="tco_card">
+          <div class="card_header">
+            <span>{{ tco.beginPage.clientName }}'s WMS Maintenance Team Costs</span>
+          </div>
+
+          <div class="card_content">
+            <form>
+              <div class="form-group">
+                <label>Number of Business FTEs </label>
+                <input class="form-control" name="NumberofBusinessFTEs"
+                  [(ngModel)]="tco.clientInput.NumberofBusinessFTEs" />
+              </div>
+
+              <div class="form-group">
+                <label>Number of IT or Technology/Developer FTEs </label>
+                <input class="form-control" name="NumberofITorTechnologyDeveloperFTEs"
+                  [(ngModel)]="tco.clientInput.NumberofITorTechnologyDeveloperFTEs" />
+              </div>
+
+              <div class="form-group">
+                <label>Number of System Admin/DBA FTEs </label>
+                <input class="form-control" name="NumberofSystemAdminDBAFTEs"
+                  [(ngModel)]="tco.clientInput.NumberofSystemAdminDBAFTEs" />
+              </div>
+
+              <div class="form-group">
+                <label>Number of Consultants/Contractors </label>
+                <input class="form-control" name="NumberofConsultantsContractors"
+                  [(ngModel)]="tco.clientInput.NumberofConsultantsContractors" />
+              </div>
+
+              <div class="form-group">
+                <label>Do you sporadically hire consultants/contractors?</label>
+                <input class="form-control" name="sporadicallyhireconsultantscontractors"
+                  [(ngModel)]="tco.clientInput.sporadicallyhireconsultantscontractors" />
+              </div>
+
+              <div class="form-group">
+                <label>If Yes, what is your total consultant/contractor cost per
+                  year?</label>
+                <input class="form-control" name="TotalconsultantContractorcostperyear" [(ngModel)]="
+                    tco.clientInput.TotalconsultantContractorcostperyear
+                  " />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="tco_footer">
+    <!-- <app-tco-footer ></app-tco-footer> -->
+    <button class="but but-primary previous" (click)="goToInformation()">
+
+    </button>
+    <button class="but but-primary" (click)="goToOutput()"></button>
+  </div>
+</div>

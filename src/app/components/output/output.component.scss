@@ -1,0 +1,36 @@
+.seactiona_wrapper {
+  
+
+}
+
+.card_content_checkbox {
+    display: flex;
+    flex: 1;
+
+    input {
+
+        &:nth-child(1){
+        
+            margin-right: 10px;
+        }
+
+        &:nth-child(2){
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+    }
+
+}
+
+.financials_wrapper {
+    margin-top: 30px;
+}
+
+
+.tco_card {
+    margin-top:10px;
+
+    &:nth-child(1){
+        margin-top:0px;
+    }
+}

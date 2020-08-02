@@ -1,0 +1,14 @@
+.tco_footer_action {
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    button{
+
+        &:nth-child(1){
+            margin-right: 5px;
+        }
+
+    }
+}

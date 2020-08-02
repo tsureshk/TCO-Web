@@ -1,0 +1,13 @@
+[  
+    {"description": "Software License Cost/Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Software Support/Per Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Legacy Software Support/Per Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Implementation Cost/Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Software Upgrade Cost/ Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Hardware Cost/Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Support FTE Headcount Cost/Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Legacy Support/Per Year", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "TOTAL", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Total 5 year spend", "wmsyear1": 0, "cloudyear1": 0},
+    {"description": "Total 5 year saving", "wmsyear1": 0, "cloudyear1": 0}
+]

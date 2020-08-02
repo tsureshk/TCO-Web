@@ -1,0 +1,554 @@
+<div class="tco_header">
+  <div class="tco_header_brand">
+    <span routerLink="">T-Shirt Sizing Calculator</span>
+  </div>
+
+  <div class="tco_sub_header">
+    <div class="tco_header_heading">
+      <label>Sizing Caculator to derive the Timeline and Cost of the implementation for your Demand Manager , Demand
+        Planner and Supply Chain Planner Applications</label>
+      <span></span>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid">
+  <div class="shirt_wrapper">
+    <div class="shirt_size_form" style="margin-right: 10px;">
+      <div class="tco_card">
+        <div class="card_header">
+          <span>T-Shirt Sizing Model</span>
+        </div>
+
+        <div class="card_content">
+          <form>
+            <div class="row">
+
+              <div class="col-sm">
+                <div class="form-group">
+                  <label>Product</label>
+                  <select class="form-control" name="Product" #t [(ngModel)]="tco.tShirtSizing.Product"
+                    (change)="callType(t.value)">
+                    <option>Demand Manager</option>
+                    <option>Demand Planner</option>
+                    <option>Supply Chain Planner</option>
+                    <option>TMS</option>
+                    <option>WMS</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="form-group">
+                  <label>Version</label>
+                  <select class="form-control" name="Version" [(ngModel)]="tco.tShirtSizing.Version">
+                    <option>n - 1 (Small)</option>
+                    <option>n - 2 to 4 (Medium)</option>
+                    <option>n - 4 to 6 (Large)</option>
+                    <option>n-6 and lesser(Extra Large)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row" *ngIf="isWMSVisible">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Purpose</label>
+                  <select class="form-control" name="Purpose" [(ngModel)]="tco.tShirtSizingWMS.Purpose">
+                    <option>Re-Implementation</option>
+                    <option>Enhancement</option>
+                    <option>Upgrade</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Lines of Business</label>
+                  <select class="form-control" name="LinesofBusiness" [(ngModel)]="tco.tShirtSizingWMS.LinesofBusiness">
+                    <option>B2B</option>
+                    <option>Retail</option>
+                    <option>Direct</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>SCM Network Reach</label>
+                      <select class="form-control" name="SCMNetworkReach"
+                       [(ngModel)]="tco.tShirtSizing.SCMNetworkReach">
+                        <option>Country</option>
+                        <option>Regional</option>
+                        <option>Global</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>No. of Dock Doors</label>
+                      <input class="form-control" type="number" name="NoofDockDoors"
+                      [(ngModel)]="tco.tShirtSizingWMS.NoOfDockDoors" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Avg. of Trucks/Day</label>
+                      <input class="form-control" type="number" name="AvgofTrucks/Day"
+                        [(ngModel)]="tco.tShirtSizingWMS.AverageTruckPerDay" />
+                    </div>
+                  </div>
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>No. of Orders per Day</label>
+                      <input class="form-control" type="number" name="NoofOrdersperDay"
+                      (blur)="validateTruck()"
+                      [(ngModel)]="tco.tShirtSizingWMS.NoOfOrdersPerDay" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Product Hierarchy Complexity - Number of Palletss Per OrderLine</label>
+                      <input class="form-control" type="number" name="NumberofPalletssPerOrderLine"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberofPalletssPerOrderLine" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Manufacturing Units (include Supplies/Partner #'s)</label>
+                      <input class="form-control" type="number" name="NumberofManufacturingUnits"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberofManufacturingUnits" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Warehouses</label>
+                      <input class="form-control" type="number" name="NumberofWarehouses"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberofWarehouses" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of DCs + FC's</label>
+
+                      <input class="form-control" type="number" name="NumberofDCsFCs"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberofDCsFCs" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Global Procurement Complexity</label>
+
+                      <select class="form-control" name="GlobalProcurementComplexity"
+                        [(ngModel)]="tco.tShirtSizingWMS.GlobalProcurementComplexity">
+                        <option>Simple</option>
+                        <option>Medium</option>
+                        <option>Complex</option>
+                        <option>Very Complex</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Green Logistics</label>
+
+                      <select class="form-control" name="GreenLogistics"
+                        [(ngModel)]="tco.tShirtSizingWMS.GreenLogistics">
+                        <option>Haz MaterialMgmt</option>
+                        <option>Control Substances (Pharma)</option>
+                        <option>BioWaste</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Partners/ Suppliers - Diverse Supplier Location</label>
+                      <select class="form-control" name="DiverseSupplierLocation>"
+                        [(ngModel)]="tco.tShirtSizingWMS.DiverseSupplierLocation">
+                        <option>Yes</option>
+                        <option>No</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Customization - Approx Number of Product Mods (%)</label>
+                      <input class="form-control" type="number" name="ApproxNumberofProductMods"
+                        [(ngModel)]="tco.tShirtSizingWMS.ApproxNumberofProductMods" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Customization -Approx Number of Custom Logic (%)&#13;&#10;</label>
+                      <input class="form-control" type="number" name="ApproxNumberofCustomLogic"
+                        [(ngModel)]="tco.tShirtSizingWMS.ApproxNumberofCustomLogic" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Interfaces - No. of Standard Interfaces integration (comes OOB)</label>
+                      <input class="form-control" type="number" name="NumberofStandardInterfacesintegration"
+                        [(ngModel)]="tco.tShirtSizingWMS.NoofStandardInterfaces" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Interfaces - Number of Non-Standard Interfaces integration (custom)</label>
+                      <input class="form-control" type="number" name="NumberofNonStandard"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberofNonStandardInterfaces" />
+                    </div>
+                  </div>
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>No. of sites to be implemented</label>
+                      <input class="form-control" type="number" name="NumberofStandardInterfacesintegration"
+                        [(ngModel)]="tco.tShirtSizingWMS.NumberOfSitesTobeImplemented" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="isOtherVisible">
+              <!-- Starts here  -->
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Purpose</label>
+                  <select class="form-control" name="Purpose" [(ngModel)]="tco.tShirtSizing.Purpose">
+                    <option>Implementation</option>
+                    <option>Transformation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Lines of Business</label>
+                  <select class="form-control" name="LinesofBusiness" [(ngModel)]="tco.tShirtSizing.LinesofBusiness">
+                    <option>B2B</option>
+                    <option>Retail</option>
+                    <option>Direct</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Ends here -->
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>SCM Network Reach</label>
+                      <select class="form-control" name="SCMNetworkReach"
+                        [(ngModel)]="tco.tShirtSizing.SCMNetworkReach">
+                        <option>Country</option>
+                        <option>Regional</option>
+                        <option>Global</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Product Hierarchy Complexity - Number of Product
+                        Hierarchy</label>
+                      <input class="form-control" type="number" name="ProductHierarchyComplexity1"
+                        [(ngModel)]="tco.tShirtSizing.ProductHierarchyComplexity1" />
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Ends here -->
+
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Product Hierarchy Complexity - Product Hierarchy
+                        Level</label>
+                      <input class="form-control" type="number" name="ProductHierarchyComplexity2"
+                        [(ngModel)]="tco.tShirtSizing.ProductHierarchyComplexity2" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Product Hierarchy Complexity - Number of SKUs</label>
+                      <input class="form-control" type="number" name="ProductHierarchyComplexity3"
+                        [(ngModel)]="tco.tShirtSizing.ProductHierarchyComplexity3" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Manufacturing Units</label>
+                      <input class="form-control" type="number" name="NetworkComplexity1"
+                        [(ngModel)]="tco.tShirtSizing.NetworkComplexity1" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Warehouses</label>
+                      <input class="form-control" type="number" name="NetworkComplexity2"
+                        [(ngModel)]="tco.tShirtSizing.NetworkComplexity2" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of DCs</label>
+                      <input class="form-control" type="number" name="NetworkComplexity3"
+                        [(ngModel)]="tco.tShirtSizing.NetworkComplexity3" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Sorting Centers</label>
+                      <input class="form-control" type="number" name="NetworkComplexity4"
+                        [(ngModel)]="tco.tShirtSizing.NetworkComplexity4" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Network Complexity - Number of Last Mile Delivery Centers</label>
+                      <input class="form-control" type="number" name="NetworkComplexity5"
+                        [(ngModel)]="tco.tShirtSizing.NetworkComplexity5" />
+                    </div>
+                  </div>
+
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Number of Partners/ Suppliers</label>
+                      <input class="form-control" name="PartnersSuppliers1" type="number" name="client"
+                        [(ngModel)]="tco.tShirtSizing.PartnersSuppliers1" />
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Customization - Approx Number of Product Mods</label>
+                      <input class="form-control" name="Customization1" type="number" name="client"
+                        [(ngModel)]="tco.tShirtSizing.Customization1" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Customization - Approx Number of Custom Logic</label>
+                      <input class="form-control" type="number" name="Customization2"
+                        [(ngModel)]="tco.tShirtSizing.Customization2" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Interfaces - Number of Standard Interfaces integration
+                        (comes OOB)</label>
+                      <input class="form-control" type="number" name="Interfaces1"
+                        [(ngModel)]="tco.tShirtSizing.Interfaces1" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <label>Interfaces - Number of Non-Standard Interfaces integration
+                        (custom)</label>
+                      <input class="form-control" type="number" name="Interfaces2"
+                        [(ngModel)]="tco.tShirtSizing.Interfaces2" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                <div class="form-group" style="text-align: right;">
+                  <button class="but but-primary" (click)="calculateShirtSizing()">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="shirt_size_tile">
+
+      <div class="offering_list_item" style="height : 100%;">
+        <div class="offering_list_item_header">
+          <div class="offering_list_item_header_icons">
+            <img src="../../../assets/icons/shirt.svg" />
+          </div>
+
+          <div class="offering_list_item_header_text">
+            <span>Our Approach</span>
+          </div>
+        </div>
+
+        <div class="offering_list_item_content">
+          <p>
+            Elapsed timelines, activities and resource plans from Discovery
+            through to Deployment with a factory approach
+
+            <br /><br /><br />
+
+            Estimation:
+
+            <br /><br />
+
+            Scoring based T-Shirt classification with a pre-defined
+            questionnaire as part of Discovery phase
+            <br /><br />
+            Key Parameters related to Supply Chain Planning considered for
+            Customer evaluation
+            <br /><br />
+            Weighted Average (WA) Score calculated from Customer response and
+            the criticality of the Parameter.
+            <br />
+            <br />
+            T-Shirt bucketing by WA
+            <br />
+           <span *ngIf="isOtherVisible"> Small: less than 180 </span>
+           <span *ngIf="isWMSVisible"> Small: less than 200 </span>
+            <br />
+            <span *ngIf="isOtherVisible"> Medium: 181-230</span>
+            <span *ngIf="isWMSVisible"> Medium: 201-250</span>
+            <br />
+            <span *ngIf="isOtherVisible"> Large: 231-280</span>
+            <span *ngIf="isWMSVisible"> Large: 251-300</span>
+            <br />
+            <span *ngIf="isOtherVisible"> Extra-Large: 281 and Above</span>
+            <span *ngIf="isWMSVisible"> Extra-Large: 301 and Above</span>
+          </p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="offering_list_item"
+    style="margin-top: 10px;width:100% !important;margin-left:0px !important;padding: 3px !important;"
+    *ngIf="isGraphVisible">
+    <div class="offering_list_item_header">
+
+
+      <div class="offering_list_item_header_text">
+        <div class="tco_card">
+          <div class="card_header">
+            <span>Sizing Results</span>
+          </div>
+
+          <div class="card_content">
+            <ul class="output_list">
+              <li class="output_list_item" *ngIf="tco.tShirtSizing.CurrentType == 'Small'">
+                <div class="output_item">
+                  <h5>Small</h5>
+                  <div>Standard implementation</div>
+                  <p>${{ this.smallStandardImplementation }} / 6 months</p>`
+                  <div>Factory Implementation</div>
+                  <p>${{ this.smallFactoryImplementation }} / 4 Months</p>
+     
+                  <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) standard implementation</div>
+                  <p *ngIf="isWMSVisible">${{ this.smallAdditionalStandardImplementation }}</p>
+                  <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) standard implementation</div>
+                  <p *ngIf="isWMSVisible">${{ this.smallAdditionalFactoryImplementation }} </p>
+                </div>
+              </li>
+
+              <li class="output_list_item" *ngIf="tco.tShirtSizing.CurrentType == 'Medium'">
+                <h5>Medium</h5>
+                <div>Standard implementation</div>
+                <p>${{ this.mediumStandardImplementation }} / 9 Months</p>
+                <div>Factory Implementation</div>
+                <p>${{ this.mediumFactoryImplementation  }} / 6 Months</p>
+                <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Standard implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.mediumAdditionalStandardImplementation }}</p>
+                
+                <div *ngIf="isWMSVisible">Rest of the sites (+ "{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Factory implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.mediumAdditionalFactoryImplementation  }}</p>
+              </li>
+
+              <li class="output_list_item" *ngIf="tco.tShirtSizing.CurrentType == 'Large'">
+                <h5>Large</h5>
+                <div>Standard implementation</div>
+                <p>${{ this.largeStandardImplementation }} / 12 Months</p>
+                <div>Factory Implementation</div>
+                <p>${{ this.largeFactoryImplementation  }} / 8 Months</p>
+                <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Standard implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.largeAdditionalStandardImplementation }}</p>
+               
+                <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Factory implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.mediumAdditionalFactoryImplementation  }}</p>
+              </li>
+
+              <li class="output_list_item" *ngIf="tco.tShirtSizing.CurrentType == 'Extra Large'">
+                <h5>Extra Large</h5>
+                <div>Standard implementation</div>
+                <p>${{ this.extraLargeStandardImplementation }}  / 14 Months</p>
+                <div>Factory Implementation</div>
+                <p>${{ this.mediumFactoryImplementation  }}  / 10 Months</p>
+                <div *ngIf="isWMSVisible">Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Standard implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.extraLargeAdditionalStandardImplementation }}</p>
+                
+                <div *ngIf="isWMSVisible"> Rest of the sites (+{{tco.tShirtSizingWMS.NumberOfSitesTobeImplemented - 1}}) Factory implementation</div>
+                <p *ngIf="isWMSVisible">${{ this.extraLargeAdditionalFactoryImplementation  }}</p>
+              
+              </li>
+            </ul>
+
+            <div class="graph" *ngIf="isOtherVisible">
+              <canvas baseChart [colors]="chartColors" [chartType]="'bar'" [datasets]="chartData" [labels]="chartLabels"
+                [options]="chartOptions" [legend]="true">
+              </canvas>
+            </div>
+
+            <div class="graph" *ngIf="isWMSVisible">
+              <canvas baseChart 
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

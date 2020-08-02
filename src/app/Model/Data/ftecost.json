@@ -1,0 +1,6 @@
+[
+    {"description": "Cost per functional FTEs", "tier1": "150000", "tier2": "135000", "tier3": "115000"},
+    {"description": "Cost per Developer FTEs", "tier1": "135000", "tier2": "115000", "tier3": "100000"},
+    {"description": "Cost per System Admin/DBA FTEs", "tier1": "135000", "tier2": "115000", "tier3": "100000"},
+    {"description": "Cost per Consultants/Contractors", "tier1": " 225000", "tier2": "205000 ", "tier3": "195000"}
+]

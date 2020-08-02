@@ -1,0 +1,43 @@
+<div class="tco_footer">
+  <!-- <app-tco-footer ></app-tco-footer> -->
+  <button class="but but-primary previous" (click)="goToLogin()"></button>
+  <button class="but but-primary" (click)="goToOutput()"></button>
+</div>
+<div class="jda_wrapper">
+  <div class="jda_list">
+    <div class="jda_list_header">
+      <span style="color: #fff;">WMS</span>
+    </div>
+
+
+
+    <div class="jda_total_cost">
+      <div class="tco_card">
+        <div class="card_header">
+          <span>License cost per user</span>
+        </div>
+
+        <div class="card_content">
+          <div class="card_content_input">
+            <div class="form-group">
+              <input
+                class="form-control"
+                placeholder="License cost per user"
+                type="number"
+                name="total"
+                [(ngModel)]="tco.jdaInput.SumJDA"
+                value="{{ getTotal() }}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tco_footer">
+  <!-- <app-tco-footer ></app-tco-footer> -->
+  <button class="but but-primary previous" (click)="goToLogin()"></button>
+  <button class="but but-primary" (click)="goToOutput()"></button>
+</div>

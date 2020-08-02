@@ -1,0 +1,13 @@
+.client_wrapper {
+    display: flex;
+    justify-content: center;
+
+    .client_information{
+        flex: 1;
+        margin-right: 1px;
+    }
+
+    .jda_information {
+        flex: 1;
+    }
+}

@@ -1,0 +1,45 @@
+.tco_header {
+    background-color:  #333;
+    color: #fff;
+    box-sizing: content-box;
+    padding: 20px 15px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+   
+    .tco_header_brand {
+        font-weight: 800;
+        color:   #007BFF;
+        font-size: 18px;
+        margin-right: 20px;
+        border-right: 1px solid #fff;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+
+    .tco_sub_header {
+
+
+
+        .tco_header_heading {
+
+
+            label {
+                display:block;
+                margin-bottom: 0px;
+                font-family: MetricHPE-Regular;
+                font-size: 20px;
+            }
+    
+            span {
+                font-size: 14px;
+                font-family: MetricHPE-Light;
+            }
+    
+        }
+
+    }
+
+ 
+
+}

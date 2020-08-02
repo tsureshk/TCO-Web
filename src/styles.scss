@@ -1,0 +1,295 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/scss/card/card';
+@import './assets/scss/input/input';
+@import './assets/scss/button/button';
+@import './assets/scss/tabs/tabs';
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+body {
+    font-family: MetricHPE;
+    background-color:  #444;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tco_footer {
+    display:flex;
+    justify-content:space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .pre {
+        margin-right: 10px;
+    }
+}
+
+
+
+.offering_content {
+
+
+    .offering_list {
+        display: flex;
+        flex-direction: row;
+
+
+        .offering_list_item {
+            border: 3px solid #007BFF;
+            padding: 30px;
+            color: #fff;
+            width:300px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 5px;
+
+            .offering_list_item_header {
+                margin-bottom: 10px;
+
+                .offering_list_item_header_icons {
+                    margin-bottom:20px ;
+                }
+
+                .offering_list_item_header_text{
+
+                    span {
+                        font-size: 18px;
+                        font-family: MetricHPE-Semibold;
+                    }
+
+                }
+
+            }
+
+
+            .offering_list_item_content {
+
+                p {
+                    font-family: MetricHPE-Light;
+                }
+            }
+
+            .offering_list_item_action {
+                position: absolute;
+                bottom: -35px;
+                left: 30px;
+
+                button {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                    background-color:   #007BFF;
+                    border: 0px;
+                    // background-image:url('../../../assets/icons/arrow.svg');
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: 30px;
+                }
+
+            }
+
+
+            &:nth-child(1){
+                margin-left: 0px;
+            }
+
+            &:hover {
+                background-color:  #007BFF;
+            }
+
+        }
+
+
+
+    }
+
+}
+
+
+.offering_list_item {
+    border: 3px solid #007BFF;
+    padding: 30px;
+    color: #fff;
+    width:300px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+
+    .offering_list_item_header {
+        margin-bottom: 10px;
+
+        .offering_list_item_header_icons {
+            margin-bottom:20px ;
+        }
+
+        .offering_list_item_header_text{
+
+            span {
+                font-size: 18px;
+                font-family: MetricHPE-Semibold;
+            }
+
+        }
+
+    }
+
+
+    .offering_list_item_content {
+
+        p {
+            font-family: MetricHPE-Light;
+        }
+    }
+
+    .offering_list_item_action {
+        position: absolute;
+        bottom: -35px;
+        left: 30px;
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color:   #007BFF;
+            border: 0px;
+            // background-image:url('../../../assets/icons/arrow.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 30px;
+        }
+
+    }
+
+
+    &:nth-child(1){
+        margin-left: 0px;
+    }
+
+    &:hover {
+        background-color:  #007BFF;
+    }
+
+}
+
+
+.but {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color:   #007BFF;
+    border: 0px;
+    background-image:url('./assets/icons/arrow.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    content:'';
+}
+
+.previous {
+    background-image:url('./assets/icons/prev.svg') !important;
+}
+
+
+@font-face {
+    font-family : MetricHPE-Regular;
+    src : url('./assets/font/MetricHPE-Desktop-Regular.otf');
+  }
+  
+  @font-face {
+    font-family : MetricHPE-Medium;
+    src : url('./assets/font/MetricHPE-Desktop-Medium.otf');
+  }
+  
+  @font-face {
+    font-family : MetricHPE-Semibold;
+    src : url('./assets/font/MetricHPE-Desktop-Semibold.otf');
+  }
+  
+  @font-face {
+    font-family : MetricHPE-Light;
+    src : url('./assets/font/MetricHPE-Desktop-Light.otf');
+  }
+   
+  
+
+  .offering_header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+
+    span {
+        font-size: 30px;
+        font-family: MetricHPE-Medium;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .offering_header_icon {
+        display: flex;
+        justify-content: flex-end;
+
+        img:nth-child(1){
+            margin-right: 10px;
+        }
+    }
+}
+
+.tco_header {
+    background-color:  #333;
+    color: #fff;
+    box-sizing: content-box;
+    padding: 20px 15px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+   
+    .tco_header_brand {
+        font-weight: 800;
+        color:   #007BFF;
+        font-size: 18px;
+        margin-right: 20px;
+        border-right: 1px solid #fff;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+
+    .tco_sub_header {
+
+
+
+        .tco_header_heading {
+
+
+            label {
+                display:block;
+                margin-bottom: 0px;
+                font-family: MetricHPE-Regular;
+                font-size: 20px;
+            }
+    
+            span {
+                font-size: 14px;
+                font-family: MetricHPE-Light;
+            }
+    
+        }
+
+    }
+
+ 
+
+}
+
+mat-dialog-container#modal-component {
+    border: 3px solid #262626;
+    border-radius: 11px;
+    background-color: #1a1a1a;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
