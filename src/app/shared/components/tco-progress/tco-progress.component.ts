@@ -10,7 +10,7 @@ export class TcoProgressComponent implements OnInit {
 
   progressName ;
 
-  constructor(private local:LocalService) { 
+  constructor(private local: LocalService) {
   }
 
   ngOnInit() {

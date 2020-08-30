@@ -1,17 +1,38 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>TcoWeb</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" /> -->
+  <script type="text/javascript">
+    angular
+      .module('customSidenavDemo', ['ngMaterial'])
+      .controller('AppCtrl', function ($scope, $mdSidenav) {
+        $scope.toggleLeft = buildToggler('left');
+
+        function buildToggler(componentId) {
+          return function () {
+            $mdSidenav(componentId).toggle();
+          };
+        }
+      });    
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script> -->
+
 </body>
+
 </html>

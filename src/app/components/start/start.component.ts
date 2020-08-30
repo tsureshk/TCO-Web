@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalService } from '../../shared/services/local.service';
+import { DataMigrationService } from '../../shared/services/datamigration.service';
 
 @Component({
   selector: 'app-start',
@@ -9,18 +10,22 @@ import { LocalService } from '../../shared/services/local.service';
 })
 export class StartComponent implements OnInit {
 
-  constructor(private route: Router , private local: LocalService) { }
+  constructor(private route: Router , private local: LocalService, private dataMigrationService: DataMigrationService) { }
 
   ngOnInit() {
   }
 
-  goToHome() { 
+  goToHome() {
     this.local.setProgress('Information');
     this.route.navigateByUrl('home/client');
   }
 
-  goToShirt(){
+  goToShirt() {
     this.route.navigateByUrl('shirt');
   }
 
+  goToMigrationFactory() {
+    console.log('Migration Factory');
+    this.route.navigateByUrl('homeDataMigration');
+  }
 }

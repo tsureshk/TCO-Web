@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { TreeModule } from '@circlon/angular-tree-component';
+// import { GuiGridModule, GuiSearching, GuiColumn } from '@generic-ui/ngx-grid';
+// // import { GuiColumn, GuiSearching } from '@generic-ui/ngx-grid';
+// import { HermesModule } from '@generic-ui/hermes';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -39,7 +43,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-
+import { TreeviewModule } from 'ngx-treeview';
 
 
 import { HomeComponent } from './components/home/home.component';
@@ -58,6 +62,22 @@ import { TCOService } from './shared/services/tco.service';
 import { ChartsModule } from 'ng2-charts';
 import { ShirtSizeComponent } from './components/shirt-size/shirt-size.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { DatamigrationFooterComponent } from './shared/components/datamigration-footer/datamigration-footer.component';
+import { DatamigrationHeaderComponent } from './shared/components/datamigration-header/datamigration-header.component';
+import { DatamigrationLayoutComponent } from './shared/components/datamigration-layout/datamigration-layout.component';
+import { DatamigrationProgressComponent } from './shared/components/datamigration-progress/datamigration-progress.component';
+
+import { OutputDataMigrationComponent } from './components/MigrationFactory/output-data-migration/output-data-migration.component';
+import { ProcessDataMigrationComponent } from './components/MigrationFactory/process-data-migration/process-data-migration.component';
+import { HomeDataMigrationComponent } from './components/MigrationFactory/home-data-migration/home-data-migration.component';
+import { ConfigurationDataMigrationComponent } from './components/MigrationFactory/configuration-data-migration/configuration-data-migration.component';
+import { AutomationComponent } from './components/MigrationFactory/automation/automation.component';
+import { AppointmentSubTaskComponent } from './components/MigrationFactory/automation/AutomationSubTask/appointment-sub-task/appointment-sub-task.component';
+import { AppointmentSummaryComponent } from './components/MigrationFactory/automation/AutomationSummary/appointment-summary/appointment-summary.component';
+import { DatamigrationComponent } from './components/migrationfactory/datamigration/datamigration.component';
+import { TcologinComponent } from './components/tcologin/tcologin.component';
+import { DataMigrationService } from './shared/services/datamigration.service';
 // import { Datasource } from './Model/Data/Datasource';
 // import { MatButtonModule } from '@angular/material/button';
 // import { MatDialogModule } from '@angular/material/dialog';
@@ -75,7 +95,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TcoLayoutComponent,
     TcoFooterComponent,
     ShirtSizeComponent,
-    StartComponent
+    StartComponent,
+    DatamigrationFooterComponent,
+    DatamigrationHeaderComponent,
+    DatamigrationLayoutComponent,
+    DatamigrationProgressComponent,
+    OutputDataMigrationComponent,
+    ProcessDataMigrationComponent,
+    HomeDataMigrationComponent,
+    ConfigurationDataMigrationComponent,
+    AutomationComponent,
+    AppointmentSubTaskComponent,
+    AppointmentSummaryComponent,
+    DatamigrationComponent,
+    TcologinComponent
   ],
   imports: [
     BrowserModule,
@@ -118,9 +151,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTooltipModule,
     MatTreeModule,
     ChartsModule,
+    TreeviewModule.forRoot(),
+    TreeModule,
     BrowserAnimationsModule
   ],
-  providers: [LocalService, TCOService],
+  providers: [LocalService, TCOService, DataMigrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

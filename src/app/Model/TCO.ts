@@ -9,7 +9,7 @@ import {LocationData} from './LocationData';
 import { ERPTCOReport } from './ERPTCOReport';
 import { TShirtSizing } from './TShirtSizing';
 import { TShirtSizingWMS } from './TShirtSizingWMS';
-
+// import { TCOLogin } from './'
 export class TCO {
     analysis: Analysis = new Analysis();
     beginPage: BeginPage = new BeginPage();
@@ -25,5 +25,4 @@ export class TCO {
 
     licenced = [];
     // amount = [];
-
 }
