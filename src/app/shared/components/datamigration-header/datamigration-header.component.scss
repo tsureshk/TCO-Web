@@ -1,0 +1,45 @@
+.dataMigration_header {
+    background-color:  #333;
+    color: #fff;
+    box-sizing: content-box;
+    padding: 20px 15px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+   
+    .dataMigration_header_brand {
+        font-weight: 800;
+        color:   #007BFF;
+        font-size: 18px;
+        margin-right: 20px;
+        border-right: 1px solid #fff;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+
+    .dataMigration_sub_header {
+
+
+
+        .dataMigration_header_heading {
+
+
+            label {
+                display:block;
+                margin-bottom: 0px;
+                font-family: MetricHPE-Regular;
+                font-size: 20px;
+            }
+    
+            span {
+                font-size: 14px;
+                font-family: MetricHPE-Light;
+            }
+    
+        }
+
+    }
+
+ 
+
+}

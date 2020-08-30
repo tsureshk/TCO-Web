@@ -1,0 +1,209 @@
+<div class="btn btn-primary" style="width: 102%; height:48px; vertical-align: top; margin-left: -15px;">
+  <button mat-button class="btn btn-primary mat-button but-primary" [matMenuTriggerFor]="configurationMenu">
+    Configuration
+  </button>
+
+  <!-- Starts here -->
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Warehouse
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Partners
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Equipment
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Work
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Inventory
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Inbound
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Outbound
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Production
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Integration
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isConfiguration>
+    Advanced
+  </button>
+
+
+  <!-- Ends here -->
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Dashboard
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Receving Issues
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Staging
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Door Activity
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Appointments
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Inbound Shipments
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Check In
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Transport Equipment
+  </button>
+
+  <button mat-button class="btn btn-primary mat-button but-primary" *ngIf=isReceving>
+    Work Queue
+  </button>
+
+
+
+  <mat-menu class="btn btn-primary" #configurationMenu="matMenu">
+    <button class="btn btn-primary" (click)="ConfigurationClick($event)">Event Management</button>
+    <br />
+    <button class="btn btn-primary">Extensions</button>
+    <br />
+    <button class="btn btn-primary">Inventory</button>
+    <br />
+    <button class="btn btn-primary">Labor</button>
+    <br />
+    <button class="btn btn-primary">Outbound planner</button>
+    <br />
+    <button class="btn btn-primary">Packing</button>
+    <br />
+    <button class="btn btn-primary">Picking</button>
+    <br />
+    <button class="btn btn-primary">Production</button>
+    <br />
+    <button class="btn btn-primary" (click)="RecevingClick($event)">Receving</button>
+    <br />
+    <button class="btn btn-primary">Returns</button>
+
+    <br />
+    <button class="btn btn-primary">Shipping</button>
+    <br />
+    <button class="btn btn-primary">System Adminstrator</button>
+    <br />
+    <button class="btn btn-primary">System Management</button>
+    <br />
+    <button class="btn btn-primary">Yard</button>
+  </mat-menu>
+</div>
+
+<div class="sidenav nav-round-corner form-control">
+  <label style="color: white;">Application : WMS</label>
+  <label style="color: white;">Project : BY</label>
+  <label style="color: white;">Process : Automation</label>
+  <label style="color: white;">Date: 08/17/2020</label>
+</div>
+
+
+<div class="main nav-round-corner" style=" height:370px; width: 87%;">
+
+  <div class="row">
+    <div class="col-sm-12">&nbsp;</div>
+  </div>
+
+  <div class="row" style="color: white;">
+    <div class="col-lg-2 form-group">
+    </div>
+
+    <div class="col-lg-10">
+      <table border="2px" style="font-size: larger;">
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;">
+            <input type="checkbox" value="Select All">
+          </td>
+          <td style="text-align: center;">
+            Test case name
+          </td>
+          <td style="text-align: center;">
+            Description
+          </td>
+        </tr>
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;"><input type="checkbox"></td>
+          <td> Add Appointment </td>
+          <td> Adding the Appointment based on the requirement</td>
+        </tr>
+
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;"><input type="checkbox"></td>
+          <td> Edit Appointment </td>
+          <td> Edit the Appointment based on the requirement</td>
+        </tr>
+
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;"><input type="checkbox"></td>
+          <td> Appointment details </td>
+          <td> Appointment details based on the requirement</td>
+        </tr>
+
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;"><input type="checkbox"></td>
+          <td> Equipment Details </td>
+          <td> Adding the Equipment based on the requirement</td>
+        </tr>
+        <tr style="height: 40px;">
+          <td style="width: 50px; text-align: center;"><input type="checkbox"></td>
+          <td> Inbound Shipment details </td>
+          <td> Adding the Inbound Shipment based on the requirement</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+    </div>
+    <div class="col-sm-1 tco_footer">
+      <button class="btn btn-primary">Process
+      </button>
+    </div>
+    <div class="col-sm-1 tco_footer">
+      <button class="btn btn-primary ">Cancel</button>
+    </div>
+    <div class="col-sm-3 tco_footer"></div>
+  </div>
+ 
+</div>
+
+
+<div class="row">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-9 tco_footer">
+    <button class="but but-primary previous" (click)="goToConfiguration()">
+    </button>
+  </div>
+  <div class="col-sm-1 tco_footer">
+    <button class="but but-primary" (click)="goToOutput()"></button>
+  </div>
+</div>

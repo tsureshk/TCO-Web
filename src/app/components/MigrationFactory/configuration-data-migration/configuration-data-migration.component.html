@@ -1,0 +1,376 @@
+<div class="container">
+    <div class="offering_wrapper">
+        <div class="offering_header">
+            <span>Wipro's BlueYonder Offering</span>
+
+            <div class="offering_header_icon">
+                <img src="../../../assets/icons/yonder.svg" width="20%">
+                <img src="../../../assets/icons/wipro.png" width="20%">
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shirt_wrapper">
+                <div class="shirt_size_form">
+                    <div class="tco_card">
+                        <div class="row">
+                            <div class="col-lg">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="row" style="font-size: large;">
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <input type="radio" class="label-Align" id="Datamigrationcheckbox"
+                                            name="Automation" (change)="changeProcess($event)" />
+                                    </div>
+
+                                    <div class="col-lg">
+                                        <label for="Datamigrationcheckbox">Data Migration</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Starts app-datamigration-header -->
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <input type="radio" class="label-Align" id="Automationcheckbox"
+                                            name="Automation" (change)="changeProcess($event)" />
+                                    </div>
+
+                                    <div class="col-lg">
+                                        <label for="Automationcheckbox">Automation</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-divider style="background-color:lightblue"></mat-divider>
+                    </div>
+
+                    <!-- Starts here -->
+                    <div class="tco_card">
+                        <div style="padding-left: 20px; padding-right: 20px;">
+                            <form>
+                                <!-- Start here -->
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <div class="form-group">
+                                            <label>Environment</label>
+                                            <select class="form-control" name="Environment">
+                                                <option>Development</option>
+                                                <option>Staging</option>
+                                                <option>Production</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="form-group">
+                                            <label>Client</label>
+                                            <select class="form-control" name="Client">
+                                                <option>Client 1</option>
+                                                <option>Client 2</option>
+                                                <option>Client 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Ends here -->
+
+                                <!-- Start here -->
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <div class="form-group">
+                                            <label>Application version</label>
+                                            <select class="form-control" name="Application">
+                                                <option>2017</option>
+                                                <option>2018</option>
+                                                <option>2019</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Ends here -->
+                            </form>
+                        </div>
+                        <mat-divider style="background-color:lightblue;"></mat-divider>
+
+                        <div *ngIf="isDatabaseSelected">
+                            <div style="padding-right: 20px;">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+
+                                    <!-- starts here another radio -->
+
+                                    <div class="row" style="font-size: large;">
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    &nbsp;
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <input type="radio" class="label-Align"
+                                                        id="DatabaseToDatabaseUploadcheckbox"
+                                                        (change)="changeUpload($event)" name="Upload" />
+                                                </div>
+
+                                                <div class="col-lg">
+                                                    <label for="DatabaseToDatabaseUploadcheckbox">Database to
+                                                        Database</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Starts app-datamigration-header -->
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    &nbsp;
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <input type="radio" class="label-Align" id="CSVUploadcheckbox"
+                                                        (change)="changeUpload($event)" name="Upload" />
+                                                </div>
+
+                                                <div class="col-lg">
+                                                    <label for="CSVUploadcheckbox">CSV Upload</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <mat-divider style="background-color:lightblue;width:102%"></mat-divider>
+                                    <!-- Ends here another radio -->
+                                    <!-- Suresh Start here -->
+                                    <div *ngIf="isDatabaseUploadSelected" style="margin-left: 20px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <span class="tco_card" style="font-size: larger;">Source Database</span>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database Version</label>
+                                                    <select class="form-control" name="DatabaseVersion">
+                                                        <option>2017</option>
+                                                        <option>2018</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Starts here -->
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Server</label>
+                                                    <select class="form-control" name="SourceServerVersion">
+                                                        <option>192.168.0.100</option>
+                                                        <option>192.168.0.101</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database</label>
+                                                    <select class="form-control" name="DatabaseServerVersion">
+                                                        <option>JDAPortal</option>
+                                                        <option>JDAAdmin</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ends here -->
+
+                                        <!-- Starts here -->
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>User name</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ends here -->
+
+                                        <!-- Starts here destination -->
+                                        <!-- Start here -->
+                                        <mat-divider style="background-color:lightblue;width:102%"></mat-divider>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <span class="tco_card" style="font-size: larger;">Target
+                                                    Database</span>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database Version</label>
+                                                    <select class="form-control" name="DatabaseVersion">
+                                                        <option>2017</option>
+                                                        <option>2018</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Starts here -->
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Server</label>
+                                                    <select class="form-control" name="SourceServerVersion">
+                                                        <option>192.168.0.100</option>
+                                                        <option>192.168.0.101</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database</label>
+                                                    <select class="form-control" name="DatabaseServerVersion">
+                                                        <option>JDAPortal</option>
+                                                        <option>JDAAdmin</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ends here -->
+
+                                        <!-- Starts here -->
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>User name</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ends here -->
+                                    <!-- Ends here destination -->
+
+                                    <!-- thara start here -->
+                                    <div *ngIf="isCSVUploadSelected" style="margin-left: 20px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <span class="tco_card" style="font-size: larger;">Migrate Database</span>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database Version</label>
+                                                    <select class="form-control" name="DatabaseVersion">
+                                                        <option>2017</option>
+                                                        <option>2018</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Starts here -->
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Server</label>
+                                                    <select class="form-control" name="SourceServerVersion">
+                                                        <option>192.168.0.100</option>
+                                                        <option>192.168.0.101</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Database</label>
+                                                    <select class="form-control" name="DatabaseServerVersion">
+                                                        <option>JDAPortal</option>
+                                                        <option>JDAAdmin</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>User name</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg">
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    &nbsp;
+                </div>
+            </div>
+               <div class="row">
+                    <label class="col-lg">&nbsp;</label>
+                    <button class="btn btn-primary col-lg-1">Submit</button>
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary col-lg-1" style="width: 125x;">Exit  </button>
+                </div>
+        </div>

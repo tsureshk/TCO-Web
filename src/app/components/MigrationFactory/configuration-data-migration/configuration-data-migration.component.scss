@@ -1,0 +1,61 @@
+@import '../home-data-migration/home-data-migration.component.scss';
+
+.shirt_wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+
+
+    
+    .shirt_size_form {
+        flex: 3;
+
+        .tco_card {
+
+            .card_header {
+                font-size: 22px;
+                font-weight: bold;
+                border-bottom:1px solid #007BFF;
+            }
+        }
+
+    }
+
+    .shirt_size_tile{
+        flex: 1;
+
+        .shirt_size_brand {
+            text-align: right;
+        }
+    }
+
+
+}
+
+
+.output_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+
+    .output_list_item {
+        flex: 200px;
+
+
+    }
+
+}
+
+.card_content {
+    display: flex;
+    flex-direction: row;
+
+    .output_list {
+        flex : 1;
+    }
+
+    .graph {
+        flex : 1;
+    }
+
+}

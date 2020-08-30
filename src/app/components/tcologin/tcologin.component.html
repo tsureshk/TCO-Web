@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="offering_wrapper">
+        <div class="offering_header">
+            <span>Wipro's BlueYonder Offering</span>
+
+            <div class="offering_header_icon">
+                <img src="../../../assets/icons/yonder.svg" width="20%">
+                <img src="../../../assets/icons/wipro.png" width="20%">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Material form subscription -->
+<!-- Default form login -->
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <form class="text-center border border-light p-5 tco_card container-fluid shirt_wrapper">
+
+            <p class="h4 mb-4">Sign in</p>
+
+            <!-- Email -->
+            <input type="email" id="defaultLoginFormEmail" name="email"
+            class="form-control mb-4" placeholder="E-mail"  [(ngModel)]="dataMigration.tcoLogin.UserName">
+
+            <!-- Password -->
+            <input type="password" id="defaultLoginFormPassword" name="password"
+            class="form-control mb-4" placeholder="Password"  
+            [(ngModel)]="dataMigration.tcoLogin.Password">
+
+            <div class="d-flex justify-content-around">
+                <div>
+                    <!-- Remember me -->
+                    <!-- <mdb-checkbox [default]="true">Remember me</mdb-checkbox> -->
+                </div>
+                <div>
+                    <!-- Forgot password -->
+                    <a href="">Forgot password?</a>
+                </div>
+            </div>
+            <br />
+            <!-- Sign in button -->
+            <button block="true" class="btn btn-primary" type="submit" (click) = loginFunction()>Sign in</button>
+            <br />
+            <!-- Register -->
+            <p>Not a member?
+                <a href="">Register</a>
+            </p>
+        </form>
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>
+<!-- Default form login -->

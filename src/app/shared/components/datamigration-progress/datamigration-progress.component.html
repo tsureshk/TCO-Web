@@ -1,0 +1,29 @@
+<div class="dataMigration_progress">
+
+    <div class="dataMigration_progress_list">
+
+        <ul>
+
+            <li [ngClass]="{'currentPhase' : progressName === 'Configuration'}" >
+                Configuration
+                <span>1</span>
+            </li>
+
+            <li [ngClass]="{'currentPhase' : progressName === 'Process'}">
+                Process
+                <span>2</span>
+            </li>
+
+            <li [ngClass]="{'currentPhase' : progressName === 'Output'}">
+                Output
+                <span>3</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
