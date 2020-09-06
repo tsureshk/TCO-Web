@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="offering_wrapper" style="height: 95px;">
+    <div class="offering_header">
+      <span>Wipro's BlueYonder Offering</span>
+
+      <div class="offering_header_icon">
+        <img src="../../../assets/icons/yonder.svg" width="20%">
+        <img src="../../../assets/icons/wipro.png" width="20%">
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-sidenav-container class="tp-container">
+
+  <mat-sidenav mode="side" opened class="tco_card card_content" style="border-width: 2px ; border-color :lightblue;">
+    <mat-divider [vertical]="true" style="background-color: lightblue;"></mat-divider>
+    <section class="tp-section heading-section">
+      <span>Automation</span>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadAutomationEnvironmentSetup()">Environment Setup</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadAutomationConfiguration()">Configuration</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadAutomationTaskCreation()">Task Creation</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadAutomationProcess()">Process</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadAutomationOperationalDashboard()">Operation
+        Dashboard</button>
+    </section>
+
+    <!-- starts app-datamigration-header -->
+    <section class="tp-section heading-section">
+      <span>Data Migration</span>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadDataMigrationEnvironmentSetup()">Environment Setup</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadDataMigrationConfiguration()">Configuration</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadDataMigrationTaskCreation()">Task Creation</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadDataMigrationProcess()">Process</button>
+    </section>
+    <section class="tp-section">
+      <button class="btn-primary form-control" (click)="LoadDataMigrationOperationalDashboard()">Operation
+        Dashboard</button>
+    </section>
+    <!-- ends here -->
+  </mat-sidenav>
+
+  <mat-sidenav-content class="tco_card card_content" style="border-block-start: red;">
+    <div *ngIf="isAutomationEnvironmentSetup">
+      <app-automation-environment-setup></app-automation-environment-setup>
+    </div>
+    <div *ngIf="isAutomationConfiguration">
+      <app-automatation-configuration></app-automatation-configuration>
+    </div>
+    <div *ngIf="isAutomationTaskCreation">
+      <app-automation-task-creation></app-automation-task-creation>
+    </div>
+    <div *ngIf="isAutomationProcess">
+      <app-automation></app-automation>
+    </div>
+    <div *ngIf="isAutomationOperationalDashboard">    
+     <app-automation-output></app-automation-output>
+    </div>
+
+    <!-- Starts app-datamigration-header -->
+    <div *ngIf="isDataMigrationEnvironmentSetup">
+     <app-data-migration-environment-setup></app-data-migration-environment-setup>
+    </div>
+    <div *ngIf="isDataMigrationConfiguration">
+      <app-data-migration-configuration></app-data-migration-configuration>
+    </div>
+    <div *ngIf="isDataMigrationTaskCreation">
+      <app-data-migration-task-creation></app-data-migration-task-creation>
+    </div>
+    <div *ngIf="isDataMigrationProcess">
+      <!-- <app-process-data-migration></app-process-data-migration> -->
+      <app-datamigration></app-datamigration>
+    </div>
+    <div *ngIf="isDataMigrationOperationalDashboard">
+      <app-output-data-migration></app-output-data-migration>
+    </div>
+    <!-- Ends here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

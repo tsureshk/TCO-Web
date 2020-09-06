@@ -28,4 +28,39 @@ export class HomeDataMigrationComponent implements OnInit {
     console.log('Output Migration');
     this.route.navigateByUrl('OutputDataMigration');
   }
+
+  goToDataMigration() {
+    console.log('Output Migration');
+    this.route.navigateByUrl('DataMigration');
+  }
+
+  goToAutomationTaskCreation() {
+    console.log('Automation Task Creation');
+    this.route.navigateByUrl('AutomationTaskCreation');
+  }
+
+  goToDataMigrationTaskCreation() {
+    console.log('Datamigration Task Creation');
+    this.route.navigateByUrl('DataMigrationTaskCreation');
+  }
+
+  goToAutomationEnvironmentSetup() {
+    console.log('Automation Environment Setup');
+    this.route.navigateByUrl('AutomationEnvironmentSetup');
+  }
+
+  goToDataMigrationEnvironmentSetup() {
+    console.log('DataMigration Environment Setup');
+    this.route.navigateByUrl('DataMigrationEnvironmentSetup');
+  }
+
+  goToAutomationConfiguration() {
+    console.log('Automation Configuration');
+    this.route.navigateByUrl('AutomationConfiguration');
+  }
+
+  goToDataMigrationConfiguration() {
+    console.log('DataMigration Configuration');
+    this.route.navigateByUrl('DataMigrationConfiguration');
+  }
 }

@@ -45,7 +45,6 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { TreeviewModule } from 'ngx-treeview';
 
-
 import { HomeComponent } from './components/home/home.component';
 import { ClientComponent } from './components/client/client.component';
 import { LoginComponent } from './components/login/login.component';
@@ -71,13 +70,30 @@ import { DatamigrationProgressComponent } from './shared/components/datamigratio
 import { OutputDataMigrationComponent } from './components/MigrationFactory/output-data-migration/output-data-migration.component';
 import { ProcessDataMigrationComponent } from './components/MigrationFactory/process-data-migration/process-data-migration.component';
 import { HomeDataMigrationComponent } from './components/MigrationFactory/home-data-migration/home-data-migration.component';
+// tslint:disable-next-line:max-line-length
 import { ConfigurationDataMigrationComponent } from './components/MigrationFactory/configuration-data-migration/configuration-data-migration.component';
 import { AutomationComponent } from './components/MigrationFactory/automation/automation.component';
+// tslint:disable-next-line:max-line-length
 import { AppointmentSubTaskComponent } from './components/MigrationFactory/automation/AutomationSubTask/appointment-sub-task/appointment-sub-task.component';
+// tslint:disable-next-line:max-line-length
 import { AppointmentSummaryComponent } from './components/MigrationFactory/automation/AutomationSummary/appointment-summary/appointment-summary.component';
 import { DatamigrationComponent } from './components/migrationfactory/datamigration/datamigration.component';
 import { TcologinComponent } from './components/tcologin/tcologin.component';
 import { DataMigrationService } from './shared/services/datamigration.service';
+import { AutomationTaskCreationComponent } from './components/MigrationFactory/automation-task-creation/automation-task-creation.component';
+import { DataMigrationTaskCreationComponent } from './components/MigrationFactory/data-migration-task-creation/data-migration-task-creation.component';
+import { AutomationEnvironmentSetupComponent } from './components/MigrationFactory/automation-environment-setup/automation-environment-setup.component';
+import { DataMigrationEnvironmentSetupComponent } from './components/MigrationFactory/data-migration-environment-setup/data-migration-environment-setup.component';
+import { DataMigrationConfigurationComponent } from './components/MigrationFactory/data-migration-configuration/data-migration-configuration.component';
+import { AutomatationConfigurationComponent } from './components/MigrationFactory/automatation-configuration/automatation-configuration.component';
+import { HomemigrationComponent } from './components/MigrationFactory/homemigration/homemigration.component';
+import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
+//import { DataMigrationOuputComponent } from './components/MigrationFactory/data-migration-ouput/data-migration-ouput.component';
+// import { AutomationOuputComponent } from './components/MigrationFactory/automation-ouput/automation-ouput.component';
+// import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
+// import { DataMigrationOutputComponent } from './components/MigrationFactory/data-migration-output/data-migration-output.component';
+
+// tslint:disable-next-line:max-line-length
 // import { Datasource } from './Model/Data/Datasource';
 // import { MatButtonModule } from '@angular/material/button';
 // import { MatDialogModule } from '@angular/material/dialog';
@@ -108,7 +124,19 @@ import { DataMigrationService } from './shared/services/datamigration.service';
     AppointmentSubTaskComponent,
     AppointmentSummaryComponent,
     DatamigrationComponent,
-    TcologinComponent
+    TcologinComponent,
+    AutomationTaskCreationComponent,
+    DataMigrationTaskCreationComponent,
+    AutomationEnvironmentSetupComponent,
+    DataMigrationEnvironmentSetupComponent,
+    DataMigrationConfigurationComponent,
+    AutomatationConfigurationComponent,
+    HomemigrationComponent,
+    AutomationOutputComponent,
+    // DataMigrationOuputComponent,
+    // AutomationOuputComponent,
+    // AutomationOutputComponent,
+    // DataMigrationOutputComponent
   ],
   imports: [
     BrowserModule,

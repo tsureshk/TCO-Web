@@ -13,6 +13,16 @@ import { ProcessDataMigrationComponent } from './components/MigrationFactory/pro
 import { OutputDataMigrationComponent } from './components/MigrationFactory/output-data-migration/output-data-migration.component';
 import { AutomationComponent } from './components/MigrationFactory/automation/automation.component';
 import { TcologinComponent } from './components/tcologin/tcologin.component';
+import { DatamigrationComponent } from './components/migrationfactory/datamigration/datamigration.component';
+import { DataMigrationTaskCreationComponent } from './components/MigrationFactory/data-migration-task-creation/data-migration-task-creation.component';
+import { AutomationTaskCreationComponent } from './components/MigrationFactory/automation-task-creation/automation-task-creation.component';
+import { AutomationEnvironmentSetupComponent } from './components/MigrationFactory/automation-environment-setup/automation-environment-setup.component';
+import { DataMigrationEnvironmentSetupComponent } from './components/MigrationFactory/data-migration-environment-setup/data-migration-environment-setup.component';
+import { AutomatationConfigurationComponent } from './components/MigrationFactory/automatation-configuration/automatation-configuration.component';
+import { DataMigrationConfigurationComponent } from './components/MigrationFactory/data-migration-configuration/data-migration-configuration.component';
+import { DataMigrationOutputComponent } from './components/MigrationFactory/data-migration-output/data-migration-output.component';
+import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
+import { HomemigrationComponent } from './components/MigrationFactory/homemigration/homemigration.component';
 //import { MigrationFactoryComponent } from './components/migration-factory/migration-factory.component';
 
 
@@ -56,6 +66,10 @@ const routes: Routes = [
     component: HomeDataMigrationComponent,
   },
   {
+    path: 'homeMigration',
+    component: HomemigrationComponent,
+  },
+  {
     path: 'Automation',
     component: AutomationComponent,
   },
@@ -66,7 +80,43 @@ const routes: Routes = [
   {
     path: 'OutputDataMigration',
     component: OutputDataMigrationComponent,
-  }
+  },
+  {
+    path: 'DataMigration',
+    component: DatamigrationComponent,
+  },
+  {
+    path: 'DataMigrationTaskCreation',
+    component: DataMigrationTaskCreationComponent,
+  },
+  {
+    path: 'AutomationTaskCreation',
+    component: AutomationTaskCreationComponent,
+  },
+  {
+    path: 'DataMigrationEnvironmentSetup',
+    component: DataMigrationEnvironmentSetupComponent,
+  },
+  {
+    path: 'AutomationEnvironmentSetup',
+    component: AutomationEnvironmentSetupComponent,
+  },
+  {
+    path: 'AutomationConfiguration',
+    component: AutomatationConfigurationComponent,
+  },
+  {
+    path: 'DataMigrationConfiguration',
+    component: DataMigrationConfigurationComponent,
+  },
+  {
+    path: 'DataMigrationOutput',
+    component: DataMigrationOutputComponent,
+  },
+  {
+    path: 'AutomationOutput',
+    component: AutomationOutputComponent,
+  },
 ];
 
 @NgModule({

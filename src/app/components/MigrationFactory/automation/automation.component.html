@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="offering_wrapper">
         <div class="offering_header">
             <span>Wipro's BlueYonder Offering</span>
@@ -9,9 +9,19 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="tco_card card_content container-fluid">
+    <!-- <div class="row">
+        <div class="col-lg-12">
+            &nbsp;
+        </div>
+    </div> -->
+
+    <h4 style="text-align: center;">
+      Automation Process
+    </h4>
+
     <div class="row">
         <div class="col-lg-12">
             &nbsp;
@@ -21,63 +31,77 @@
     <div class="row">
 
         <div class="col-lg-2" style="padding-left: 30px;">
-            <p>Module</p>
+            <p>Select Module</p>
 
             <tree-root [nodes]="nodes" [options]="options"></tree-root>
         </div>
         <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
         <div class="col-lg-9">
             <div class="row">
-                <div class="col-lg-2">
-                    <div style="align-items: flex-start;">
-                        <label class="form-group">Selected Project</label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
+                <div class="col-lg">
                     <div class="form-group">
-                        <!-- <select class="form-control" name="TShirtSizing" [(ngModel)]="tco.tShirtSizingWMS.ShirtSize"> -->
-                        <select class="form-control" name="SelectedProject">
-                            <option>Project 1</option>
-                            <option>Project 2</option>
-                            <option>Project 3</option>
-                            <option>Project 4</option>
+                        <label>Select Client</label>
+                        <select class="form-control" name="Client">
+                            <option>CISCO</option>
+                            <option>HP</option>
+                            <option>Philips</option>
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <p>Selected Module</p>
+
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label>Select Project</label>
+                        <select class="form-control" name="Environment">
+                            <option>H & M</option>
+                            <option>Saudi Airways</option>
+                            <option>Woolsworth</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    Appointment
-                </div>
+
             </div>
             <div class="row">
-                <!-- <div class="col-lg-2">
-                    <div style="align-items: flex-start;">
-                        <label>Source Environment</label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
+                <div class="col-lg">
                     <div class="form-group">
-                        <input class="form-control" value="Source Environment" name="SourceEnvironmentTextbox"
-                            type="text" />
-                    </div>
-                </div> -->
-
-                <div class="col-lg-2">
-                    <div style="align-items: flex-start;">
-                        <label>Target Environment</label>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="form-group">
-                        <!-- <select class="form-control" name="TShirtSizing" [(ngModel)]="tco.tShirtSizingWMS.ShirtSize"> -->
-                        <input class="form-control" value="Target Environment" name="TargetEnvironmentTextbox"
-                            type="text" />
+                        <label>Select Product</label>
+                        <select class="form-control" name="Environment">
+                            <option>TMS</option>
+                            <option>WMS</option>
+                        </select>
                     </div>
                 </div>
 
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label>Select Environment</label>
+                        <select class="form-control" name="Environment">
+                            <option>Development</option>
+                            <option>Staging</option>
+                            <option>Production</option>
+                        </select>
+                    </div>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label>Selected Module</label>
+                        <input class="form-control" type="text" value="Appointment" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input class="form-control" type="text" value="http://52.152.226.151:4200/" />
+                    </div>
+                </div>
+            </div>
+
             <mat-divider style="background-color: white; width: 112%; padding-left: -10px;"></mat-divider>
 
             <div class="row">
@@ -115,7 +139,7 @@
                                 T00001
                             </td>
                             <td style="text-align: center; width: 300px">
-                                Create Appointment
+                                Inbound Shipment
                             </td>
                             <td style="text-align: center; width: 220px">
                                 <!-- <a href="//Automation" onclick="downloadTemplate()">Download</a> -->
@@ -146,7 +170,7 @@
                                 T00002
                             </td>
                             <td style="text-align: center; width: 300px">
-                                Select Appointment
+                                Outbound Shipment
                             </td>
                             <td style="text-align: center; width: 220px">
                                 <!-- <a href="//Automation" onclick="downloadTemplate()">Download</a> -->
@@ -166,65 +190,6 @@
                                 Completed
                             </td>
                         </tr>
-                        <!-- Ends here -->
-
-                        <!-- Starts app-datamigration-header -->
-                        <tr style="height: 40px;">
-                            <td style="width: 50px; text-align: center;">
-                                <input type="checkbox" value="Select All">
-                            </td>
-                            <td style="text-align: center;width: 100px">
-                                T00003
-                            </td>
-                            <td style="text-align: center; width: 300px">
-                                Select Carrier
-                            </td>
-                            <td style="text-align: center; width: 220px">
-                                <!-- <a href="//Automation" onclick="downloadTemplate()">Download</a> -->
-                                <a [href]="fileUrl" download='../automation/TemplatesFiles/test.ods'>DownloadFile</a>
-                            </td>
-
-                            <td style="text-align: center; width:220px">
-                                <button (click)='loadSubTask()'>Sub Task</button>
-                            </td>
-
-                            <td style="text-align: center; width:220px">
-                                <button>Summary</button>
-                            </td>
-                            <td style="text-align: center; width:100px">
-                                Completed
-                            </td>
-                        </tr>
-                        <!-- Ends here -->
-
-                        <!-- Starts app-datamigration-header -->
-                        <tr style="height: 40px;">
-                            <td style="width: 50px; text-align: center;">
-                                <input type="checkbox" value="Select All">
-                            </td>
-                            <td style="text-align: center;width: 100px">
-                                T00004
-                            </td>
-                            <td style="text-align: center; width: 300px">
-                                Save Appointment
-                            </td>
-                            <td style="text-align: center; width: 220px">
-                                <!-- <a href="//Automation" onclick="downloadTemplate()">Download</a> -->
-                                <a [href]="fileUrl" download='../automation/TemplatesFiles/test.ods'>DownloadFile</a>
-                            </td>
-
-                            <td style="text-align: center; width:220px">
-                                <button (click)='loadSubTask()'>Sub Task</button>
-                            </td>
-
-                            <td style="text-align: center; width:220px">
-                                <button>Summary</button>
-                            </td>
-                            <td style="text-align: center; width:100px">
-                                Completed
-                            </td>
-                        </tr>
-                        <!-- Ends here -->
                     </table>
                 </div>
             </div>

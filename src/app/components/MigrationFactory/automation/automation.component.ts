@@ -136,18 +136,6 @@ export class AutomationComponent implements OnInit {
     anchor.click();
     anchor.parentNode.removeChild(anchor);
     console.log('Test Done');
-
-
-    // this.fileService.download().subscribe(
-    //   res => {
-    //     const blob = new Blob([res.blob()], { type: 'application/vnd.ms.excel' });
-    //     const file = new File([blob], this.fileName + '.xlsx', { type: 'application/vnd.ms.excel' });
-    //     saveAs(file);
-    //   },
-    //   res => {
-    //     // notify error
-    //   }
-    // );
   }
 
   loadSubTask() {

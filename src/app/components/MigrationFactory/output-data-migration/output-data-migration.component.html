@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="offering_wrapper">
     <div class="offering_header">
       <span>Wipro's BlueYonder Offering</span>
@@ -8,83 +8,157 @@
         <img src="../../../assets/icons/wipro.png" width="20%">
       </div>
     </div>
+  </div> -->
+
+<div style="padding-left: 40px; padding-right: 30px;">
+  <h4 style="text-align: center;">
+      Datamigration Operation Dashboard
+  </h4>
+
+  <div class="row">
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Select Client</label>
+        <select class="form-control" name="Client">
+          <option>CISCO</option>
+          <option>HP</option>
+          <option>Philips</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Select Project</label>
+        <select class="form-control" name="Environment">
+          <option>H & M</option>
+          <option>Saudi Airways</option>
+          <option>Woolsworth</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Select Product</label>
+        <select class="form-control" name="Environment">
+          <option>TMS</option>
+          <option>WMS</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Select Environment</label>
+        <select class="form-control" name="Environment">
+          <option>Development</option>
+          <option>Staging</option>
+          <option>Production</option>
+        </select>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <div class="row" style="padding-left: 40px; padding-right: 30px; font-size: larger;">
+  <div class="row">
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Last run by</label>
+        <select class="form-control" name="Environment">
+          <option>2020-08-01 11:00</option>
+          <option>2020-08-02 11:00</option>
+          <option>2020-08-03 11:00</option>
+        </select>
+      </div>
+    </div>
 
-      <div class="col-lg tco_card" style="background-color: darkcyan;">
-        <div class="card_header" style="width: 200px">
-          <label>Total No. of run</label>
+    <div class="col-lg">
+      <div class="form-group">
+        <label>Log or error location</label>
+        <input type ="text"  class="form-control" placeholder="Log or error file link" />
+        <!-- <select class="form-control" name="Environment">
+          <option>2020-08-01 11:00</option>
+          <option>2020-08-02 11:00</option>
+          <option>2020-08-03 11:00</option>
+        </select> -->
+      </div>
+    </div>
+  </div>
+  <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
+
+  <div class="row" style="font-size: larger;">
+
+    <div class="col-lg tco_card" style="background-color: darkcyan;">
+      <div class="card_header" style="width: 200px">
+        <label>Total No. of run</label>
+      </div>
+
+      <div class="row">
+        <div class="card_header col-lg-3">
         </div>
-
-        <div class="row">
-          <div class="card_header col-lg-3">
-          </div>
-          <div class="card_header col-lg-6" style="font-size: larger;">
-            <label>100</label>
-          </div>
-          <div class="card_header col-lg-3">
-          </div>
+        <div class="card_header col-lg-6" style="font-size: larger;">
+          <label>100</label>
+        </div>
+        <div class="card_header col-lg-3">
         </div>
       </div>
-      <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
-      <div class="col-lg tco_card" style="background-color: lightseagreen;width: 200px">
-        <div class="card_header">
-          <label>Total No. of Pass run</label>
-        </div>
+    </div>
+    <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
+    <div class="col-lg tco_card" style="background-color: lightseagreen;width: 200px">
+      <div class="card_header">
+        <label>Total No. of Pass run</label>
+      </div>
 
-        <div class="row">
-          <div class="card_header col-lg-3">
-          </div>
-          <div class="card_header col-lg-6" style="font-size: larger;">
-            <label>100</label>
-          </div>
-          <div class="card_header col-lg-3">
-          </div>
+      <div class="row">
+        <div class="card_header col-lg-3">
+        </div>
+        <div class="card_header col-lg-6" style="font-size: larger;">
+          <label>100</label>
+        </div>
+        <div class="card_header col-lg-3">
         </div>
       </div>
-      <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
-      <div class="col-lg tco_card" style="background-color: lightsalmon; width: 200px">
-        <div class="card_header">
-          <label>Total No. of Fail run</label>
+    </div>
+    <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
+    <div class="col-lg tco_card" style="background-color: lightsalmon; width: 200px">
+      <div class="card_header">
+        <label>Total No. of Fail run</label>
+      </div>
+
+      <div class="row">
+        <div class="card_header col-lg-3">
         </div>
+        <div class="card_header col-lg-6" style="font-size: larger;">
+          <label>0</label>
+        </div>
+        <div class="card_header col-lg-3">
 
-        <div class="row">
-          <div class="card_header col-lg-3">
-          </div>
-          <div class="card_header col-lg-6" style="font-size: larger;">
-            <label>0</label>
-          </div>
-          <div class="card_header col-lg-3">
-
-          </div>
         </div>
       </div>
-      <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
-      <div class="col-lg tco_card" style="background-color: lightseagreen; width: 200px">
-        <div class="row">
-          <div class="card_header col-lg-1">
-          </div>
-          <div class="card_header col-lg" style="font-size: larger;">
-            <label>% of pass run</label>
-          </div>
+    </div>
+    <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
+    <div class="col-lg tco_card" style="background-color: lightseagreen; width: 200px">
+      <div class="row">
+        <div class="card_header col-lg-1">
         </div>
+        <div class="card_header col-lg" style="font-size: larger;">
+          <label>% of pass run</label>
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="card_header col-lg-3">
-          </div>
-          <div class="card_header col-lg-6" style="font-size: larger;">
-            <label>100 %</label>
-          </div>
-          <div class="card_header col-lg-3">
-          </div>
+      <div class="row">
+        <div class="card_header col-lg-3">
+        </div>
+        <div class="card_header col-lg-6" style="font-size: larger;">
+          <label>100 %</label>
+        </div>
+        <div class="card_header col-lg-3">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card_content container-fluid row" style="padding-left: 40px; padding-right: 0px;">
+  <div class="card_content container-fluid row">
     <div class="col-lg-6 tco_card">
       <table border="2px" style="font-size: small;">
         <tr style="height: 40px;">
@@ -173,9 +247,9 @@
           <div style="align-items: flex-start; ">
             <label class="form-group">Selected Task</label>
           </div>
-          
+
         </div>
-        
+
         <div class="col-lg-8">
           <mat-divider [vertical]="true" style="background-color: white;"></mat-divider>
           <div class="form-group">
@@ -243,12 +317,12 @@
     </div>
     <!-- Ends here -->
   </div>
-  
+
   <mat-divider style="background-color: white; width:99%; padding-left: -50px;"></mat-divider>
   <div>
 
     <div class=" card_content row" style="padding-left: 25px; padding-right: 14px;">
-      
+
       <div class="col-lg">
         <div class="tco_card">
           <div class="card_header">
@@ -256,17 +330,11 @@
           </div>
           <div class="card_content" width="75%" style="padding:130px !important">
             <canvas baseChart [colors]="chartColors" [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels"
-              [options]="chartOptions" [legend]="true" (chartClick)="onChartClick($event)">
+            [options]="chartOptions" [legend]="true">
+              <!-- [options]="chartOptions" [legend]="true" (chartClick)="onChartClick($event)"> -->
             </canvas>
           </div>
         </div>
       </div>
-    </div>>
-  </div>
-
-  <div class="tco_footer">
-    <!-- <button class="but but-primary previous" (click)="goToProcess()">
-
-  </button>
-   -->
+    </div>
   </div>
