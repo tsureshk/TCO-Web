@@ -1,11 +1,73 @@
 <div class="container">
-    <div class="offering_wrapper">
+    <div class="offering_wrapper" style="height: 95px;">
         <div class="offering_header">
-            <span>Wipro's BlueYonder Offering</span>
+            <span>Wipro's Supply Chain Studio</span>
 
             <div class="offering_header_icon">
-                <img src="../../../assets/icons/yonder.svg" width="20%">
-                <img src="../../../assets/icons/wipro.png" width="20%">
+                <img src="../../../assets/icons/yonder.svg" width="15%" (click)="goToNavigateToHomePage()">
+                <img src="../../../assets/icons/wipro.png" width="15%" (click)="goToNavigateToHomePage()">
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-sidenav-container class="tp-container">
+
+    <mat-sidenav mode="side" opened class="tco_card card_content" style="border-width: 2px ; border-color :lightblue;">
+        <mat-divider [vertical]="true" style="background-color: lightblue;"></mat-divider>
+        <br />
+        <!-- <section class="tp-section heading-section">
+            <span>Data Migration</span>
+        </section> -->
+        <section class="tp-section">
+            <button class="btn-primary form-control" (click)="LoadDataMigrationEnvironmentSetup()">Environment
+                Setup</button>
+        </section>
+        <section class="tp-section">
+            <button class="btn-primary form-control" (click)="LoadDataMigrationConfiguration()">Configuration</button>
+        </section>
+        <section class="tp-section">
+            <button class="btn-primary form-control" (click)="LoadDataMigrationTaskCreation()">Task Creation</button>
+        </section>
+        <section class="tp-section">
+            <button class="btn-primary form-control" (click)="LoadDataMigrationProcess()">Process</button>
+        </section>
+        <section class="tp-section">
+            <button class="btn-primary form-control" (click)="LoadDataMigrationOperationalDashboard()">Operation
+                Dashboard</button>
+        </section>
+        <!-- ends here -->
+    </mat-sidenav>
+
+    <mat-sidenav-content class="tco_card card_content" style="border-block-start: red;">
+        <div *ngIf="isDataMigrationEnvironmentSetup">
+            <app-data-migration-environment-setup></app-data-migration-environment-setup>
+        </div>
+        <div *ngIf="isDataMigrationConfiguration">
+            <app-data-migration-configuration></app-data-migration-configuration>
+        </div>
+        <div *ngIf="isDataMigrationTaskCreation">
+            <app-data-migration-task-creation></app-data-migration-task-creation>
+        </div>
+        <div *ngIf="isDataMigrationProcess">
+            <!-- <app-process-data-migration></app-process-data-migration> -->
+            <app-datamigration></app-datamigration>
+        </div>
+        <div *ngIf="isDataMigrationOperationalDashboard">
+            <app-output-data-migration></app-output-data-migration>
+        </div>
+        <!-- Ends here -->
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div class="container">
+    <div class="offering_wrapper">
+        <div class="offering_header">
+            <span>Wipro's Supply Chain Studio</span>
+
+            <div class="offering_header_icon">
+                <img src="../../../assets/icons/yonder.svg" width="15%" (click) = "goToNavigateToHomePage()">
+                <img src="../../../assets/icons/wipro.png" width="15%" (click) = "goToNavigateToHomePage()">>
             </div>
         </div>
 
@@ -234,4 +296,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

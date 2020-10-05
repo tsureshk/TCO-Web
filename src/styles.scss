@@ -267,9 +267,7 @@ ul {
 
 
         .tco_header_heading {
-
-
-            label {
+           label {
                 display:block;
                 margin-bottom: 0px;
                 font-family: MetricHPE-Regular;
@@ -280,19 +278,23 @@ ul {
                 font-size: 14px;
                 font-family: MetricHPE-Light;
             }
-    
         }
-
     }
-
- 
-
 }
 
-mat-dialog-container#modal-component {
-    border: 3px solid #262626;
-    border-radius: 11px;
-    background-color: #1a1a1a;
+img:hover {
+    cursor: grab;
 }
+
+// mat-dialog-container#modal-component {
+//     border: 3px solid #262626;
+//     border-radius: 11px;
+//     background-color: blue;
+// }
+
+// .backdropBackground {
+//     background-color: blue;
+// }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

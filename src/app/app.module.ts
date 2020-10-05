@@ -88,6 +88,9 @@ import { DataMigrationConfigurationComponent } from './components/MigrationFacto
 import { AutomatationConfigurationComponent } from './components/MigrationFactory/automatation-configuration/automatation-configuration.component';
 import { HomemigrationComponent } from './components/MigrationFactory/homemigration/homemigration.component';
 import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
+import { AutomationEnvironmentUpdateDeleteComponent } from './components/MigrationFactory/automation-environment-update-delete/automation-environment-update-delete.component';
+import { DataMigrationEnvironmentUpdateOrDeleteComponent } from './components/MigrationFactory/data-migration-environment-update-or-delete/data-migration-environment-update-or-delete.component';
+import { HomeAutomationMigrationComponent } from './components/MigrationFactory/home-automation-migration/home-automation-migration.component';
 //import { DataMigrationOuputComponent } from './components/MigrationFactory/data-migration-ouput/data-migration-ouput.component';
 // import { AutomationOuputComponent } from './components/MigrationFactory/automation-ouput/automation-ouput.component';
 // import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
@@ -133,6 +136,9 @@ import { AutomationOutputComponent } from './components/MigrationFactory/automat
     AutomatationConfigurationComponent,
     HomemigrationComponent,
     AutomationOutputComponent,
+    AutomationEnvironmentUpdateDeleteComponent,
+    DataMigrationEnvironmentUpdateOrDeleteComponent,
+    HomeAutomationMigrationComponent,
     // DataMigrationOuputComponent,
     // AutomationOuputComponent,
     // AutomationOutputComponent,

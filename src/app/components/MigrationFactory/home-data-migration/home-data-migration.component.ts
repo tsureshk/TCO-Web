@@ -8,59 +8,64 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-data-migration.component.scss']
 })
 export class HomeDataMigrationComponent implements OnInit {
+  isDataMigrationEnvironmentSetup = false;
+  isDataMigrationConfiguration = false;
+  isDataMigrationTaskCreation = false;
+  isDataMigrationProcess = false;
+  isDataMigrationOperationalDashboard = false;
 
-  constructor(private route: Router, private dataMigrationservice: DataMigrationService) { }
+  constructor(private route: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.LoadDataMigrationEnvironmentSetup();
   }
 
-  goToAutomation() {
-    console.log('Automation Migration');
-    this.route.navigateByUrl('Automation');
+  LoadDefaultValue() {
+    this.isDataMigrationEnvironmentSetup = false;
+    this.isDataMigrationConfiguration = false;
+    this.isDataMigrationTaskCreation = false;
+    this.isDataMigrationProcess = false;
+    this.isDataMigrationOperationalDashboard = false;
   }
 
-  goToConfiguration() {
-    console.log('Configuration Migration');
-    this.route.navigateByUrl('Configuration');
+
+  LoadDataMigrationEnvironmentSetup() {
+    this.LoadDefaultValue();
+
+    this.isDataMigrationEnvironmentSetup = true;
+    console.log('isDataMigrationEnvironmentSetup');
   }
 
-  goToOutput() {
-    console.log('Output Migration');
-    this.route.navigateByUrl('OutputDataMigration');
+  LoadDataMigrationConfiguration() {
+    this.LoadDefaultValue();
+    this.isDataMigrationConfiguration = true;
+
+    console.log('isDataMigrationConfiguration');
   }
 
-  goToDataMigration() {
-    console.log('Output Migration');
-    this.route.navigateByUrl('DataMigration');
+  LoadDataMigrationTaskCreation() {
+    this.LoadDefaultValue();
+    this.isDataMigrationTaskCreation = true;
+
+    console.log('DataMigrationTaskCreation');
   }
 
-  goToAutomationTaskCreation() {
-    console.log('Automation Task Creation');
-    this.route.navigateByUrl('AutomationTaskCreation');
+  LoadDataMigrationProcess() {
+    this.LoadDefaultValue();
+    this.isDataMigrationProcess = true;
+
+    console.log('isDataMigrationProcess');
   }
 
-  goToDataMigrationTaskCreation() {
-    console.log('Datamigration Task Creation');
-    this.route.navigateByUrl('DataMigrationTaskCreation');
+  LoadDataMigrationOperationalDashboard() {
+    this.LoadDefaultValue();
+    this.isDataMigrationOperationalDashboard = true;
+
+    console.log('isDataMigrationOperationalDashboard');
   }
 
-  goToAutomationEnvironmentSetup() {
-    console.log('Automation Environment Setup');
-    this.route.navigateByUrl('AutomationEnvironmentSetup');
-  }
-
-  goToDataMigrationEnvironmentSetup() {
-    console.log('DataMigration Environment Setup');
-    this.route.navigateByUrl('DataMigrationEnvironmentSetup');
-  }
-
-  goToAutomationConfiguration() {
-    console.log('Automation Configuration');
-    this.route.navigateByUrl('AutomationConfiguration');
-  }
-
-  goToDataMigrationConfiguration() {
-    console.log('DataMigration Configuration');
-    this.route.navigateByUrl('DataMigrationConfiguration');
+  goToNavigateToHomePage() {
+    console.log('Start Home');
+    this.route.navigateByUrl('Start');
   }
 }

@@ -141,7 +141,13 @@ export class AutomationComponent implements OnInit {
   loadSubTask() {
     console.log('Automation Sub task');
 
-    this.dialog.open(AppointmentSubTaskComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.id = 'modal-component';
+    // dialogConfig.height = '350px';
+    // dialogConfig.width = '600px';
+
+    this.dialog.open(AppointmentSubTaskComponent, dialogConfig);
   }
   SummaryReport() {
     console.log('Automation Sub task');

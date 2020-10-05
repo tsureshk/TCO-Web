@@ -23,6 +23,7 @@ import { DataMigrationConfigurationComponent } from './components/MigrationFacto
 import { DataMigrationOutputComponent } from './components/MigrationFactory/data-migration-output/data-migration-output.component';
 import { AutomationOutputComponent } from './components/MigrationFactory/automation-output/automation-output.component';
 import { HomemigrationComponent } from './components/MigrationFactory/homemigration/homemigration.component';
+import { HomeAutomationMigrationComponent } from './components/MigrationFactory/home-automation-migration/home-automation-migration.component';
 //import { MigrationFactoryComponent } from './components/migration-factory/migration-factory.component';
 
 
@@ -117,6 +118,10 @@ const routes: Routes = [
     path: 'AutomationOutput',
     component: AutomationOutputComponent,
   },
+  {
+    path: 'HomeAutomation',
+    component: HomeAutomationMigrationComponent,
+  }
 ];
 
 @NgModule({

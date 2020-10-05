@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homemigration',
@@ -18,7 +19,7 @@ export class HomemigrationComponent implements OnInit {
   isDataMigrationProcess = false;
   isDataMigrationOperationalDashboard = false;
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -105,5 +106,10 @@ export class HomemigrationComponent implements OnInit {
     this.isDataMigrationOperationalDashboard = true;
 
     console.log('isDataMigrationOperationalDashboard');
+  }
+
+  goToNavigateToHomePage() {
+    console.log('Start Home');
+    this.route.navigateByUrl('Start');
   }
 }

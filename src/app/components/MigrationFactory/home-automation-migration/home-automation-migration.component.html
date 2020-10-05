@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="offering_wrapper" style="height: 95px;">
+      <div class="offering_header">
+        <span>Wipro's Supply Chain Studio</span>
+  
+        <div class="offering_header_icon">
+          <img src="../../../assets/icons/yonder.svg" width="15%" (click) = "goToNavigateToHomePage()">
+          <img src="../../../assets/icons/wipro.png" width="15%" (click) = "goToNavigateToHomePage()">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <mat-sidenav-container class="tp-container">
+  
+    <mat-sidenav mode="side" opened class="tco_card card_content" style="border-width: 2px ; border-color :lightblue;">
+      <mat-divider [vertical]="true" style="background-color: lightblue;"></mat-divider>
+      <br />
+      <!-- <section class="tp-section heading-section">
+        <span> </span>
+      </section> -->
+      <section class="tp-section">
+        <button class="btn-primary form-control" (click)="LoadAutomationEnvironmentSetup()">Environment Setup</button>
+      </section>
+      <section class="tp-section">
+        <button class="btn-primary form-control" (click)="LoadAutomationConfiguration()">Configuration</button>
+      </section>
+      <section class="tp-section">
+        <button class="btn-primary form-control" (click)="LoadAutomationTaskCreation()">Task Creation</button>
+      </section>
+      <section class="tp-section">
+        <button class="btn-primary form-control" (click)="LoadAutomationProcess()">Process</button>
+      </section>
+      <section class="tp-section">
+        <button class="btn-primary form-control" (click)="LoadAutomationOperationalDashboard()">Operation
+          Dashboard</button>
+      </section>
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="tco_card card_content" style="border-block-start: red;">
+      <div *ngIf="isAutomationEnvironmentSetup">
+        <app-automation-environment-setup></app-automation-environment-setup>
+      </div>
+      <div *ngIf="isAutomationConfiguration">
+        <app-automatation-configuration></app-automatation-configuration>
+      </div>
+      <div *ngIf="isAutomationTaskCreation">
+        <app-automation-task-creation></app-automation-task-creation>
+      </div>
+      <div *ngIf="isAutomationProcess">
+        <app-automation></app-automation>
+      </div>
+      <div *ngIf="isAutomationOperationalDashboard">    
+       <app-automation-output></app-automation-output>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

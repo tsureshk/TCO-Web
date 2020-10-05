@@ -26,6 +26,11 @@ export class StartComponent implements OnInit {
 
   goToMigrationFactory() {
     console.log('Migration Factory');
-    this.route.navigateByUrl('homeMigration');
+    this.route.navigateByUrl('HomeAutomation');
+  }
+
+  goToDataMigrationFactory() {
+    console.log('Data Migration Factory');
+    this.route.navigateByUrl('homeDataMigration');
   }
 }
