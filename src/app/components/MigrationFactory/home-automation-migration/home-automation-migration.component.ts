@@ -63,4 +63,9 @@ export class HomeAutomationMigrationComponent implements OnInit {
 
     console.log('isAutomationOperationalDashboard');
   }
+
+  goToNavigateToHomePage() {
+    console.log('Start Home');
+    this.route.navigateByUrl('Start');
+  }
 }
